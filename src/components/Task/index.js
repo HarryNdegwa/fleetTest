@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { ImCheckboxChecked, ImCross } from "react-icons/im";
 import "./style.css";
-import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import { AiFillStar } from "react-icons/ai";
 import { BsTagFill } from "react-icons/bs";
