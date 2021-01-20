@@ -1,9 +1,38 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
+import { AiOutlineBars } from "react-icons/ai";
 import "./style.css";
+import { ImPlus, ImCross } from "react-icons/im";
+import MainHeader from "../MainHeader";
 
 function NewList(props) {
-  return <div className="new-list"></div>;
+  return (
+    <div className="new-list">
+      <div className="create-list-top-header">
+        <p className="mr-3">
+          <span className="mx-1">
+            <FaUser />
+          </span>
+          mike@gmail.com
+        </p>
+
+        <Link to="/" className="db-link mr-3">
+          <span className="mr-1">
+            <AiOutlineBars />
+          </span>
+          Manage Lists
+        </Link>
+        <Link to="/" className="db-link mr-3">
+          <span className="mr-1">
+            <ImPlus />
+          </span>
+          New List
+        </Link>
+      </div>
+      <MainHeader />
+    </div>
+  );
 }
 
 export default NewList;
