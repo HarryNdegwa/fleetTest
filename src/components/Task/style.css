@@ -3,6 +3,7 @@
   display: flex;
   align-items: center;
   padding: 0px 40px;
+  max-height: 100%;
 }
 
 .task-info {
@@ -13,22 +14,9 @@
   justify-content: flex-start;
 }
 
-.task-inner-info {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  justify-content: space-between;
-}
-
-.task-inner-info-content {
-  flex: 4;
-}
-
 .task-inner-info h6 {
   width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  height: 100%;
 }
 
 .task-inner-info span {
@@ -83,6 +71,11 @@
   }
 
   .task-actions-sm-wrapper {
+    flex: 1;
     display: block;
+  }
+
+  .task:hover .task-actions {
+    display: none;
   }
 }

@@ -13,10 +13,10 @@ function Task(props) {
       <div className="task-info">
         <ImCheckboxChecked style={{ fontSize: "30px" }} />
         <div className="task-inner-info">
-          <div className="task-inner-info-content">
-            <h6 className="mx-3">Get some code done</h6>
-          </div>
-          <small className="task-date">No due date</small>
+          <h6 className="mx-3">
+            Get some code done Get some code done{" "}
+            <small className="task-date">No due date</small>
+          </h6>
         </div>
       </div>
       <div className="task-actions-wrapper">
