@@ -31,6 +31,9 @@ function NewList(props) {
         </Link>
       </div>
       <MainHeader />
+      <div className="create-list-secondary-header">
+        <h2>Create your to-do list below</h2>
+      </div>
     </div>
   );
 }
