@@ -12,6 +12,18 @@
   background-color: green;
 }
 
+.saved-list-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.saved-list {
+  border: 1px solid #d4d4d4;
+  padding: 4px 5px;
+  border-radius: 10px;
+  margin: 0px 10px;
+}
+
 @media screen and (max-width: 576px) {
   .saved-list-top-header {
     display: none;

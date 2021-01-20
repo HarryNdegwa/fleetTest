@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
 import "./style.css";
-import { ImPlus } from "react-icons/im";
+import { ImPlus, ImCross } from "react-icons/im";
 
 function SavedLists(props) {
   return (
@@ -35,6 +35,25 @@ function SavedLists(props) {
           </span>
           <span style={{ fontWeight: "bold" }}>Create a New List</span>
         </Link>
+
+        <div className="saved-list-wrapper">
+          <span className="saved-list">
+            <h6 style={{ display: "inline-block" }}>Helloo world</h6>
+            <span className="badge bg-dark mx-2 text-white">10</span>
+            <ImCross
+              style={{ fontSize: "10px" }}
+              className="task-action-icon"
+            />
+          </span>
+          <span className="saved-list">
+            <h6 style={{ display: "inline-block" }}>Helloo world</h6>
+            <span className="badge bg-dark mx-2 text-white">10</span>
+            <ImCross
+              style={{ fontSize: "10px" }}
+              className="task-action-icon"
+            />
+          </span>
+        </div>
       </div>
     </div>
   );
