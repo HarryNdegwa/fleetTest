@@ -1,10 +1,14 @@
 import React from "react";
 
 import "./style.css";
+import TopHeader from "../TopHeader";
+import MainHeader from "../MainHeader";
 
 function index(props) {
   return (
-    <div className="container-fluid login">
+    <div className="login">
+      <TopHeader />
+      <MainHeader />
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
