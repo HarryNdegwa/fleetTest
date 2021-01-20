@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import "./style.css";
 import TopHeader from "../TopHeader";
 import MainHeader from "../MainHeader";
+import SmallScreenTopHeader from "../SmallScreenTopHeader";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email().required("Required!"),
@@ -14,6 +15,7 @@ function index(props) {
   return (
     <div className="login">
       <TopHeader />
+      <SmallScreenTopHeader />
       <MainHeader />
       <div className="container">
         <div className="row">
