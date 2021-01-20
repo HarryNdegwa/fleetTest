@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./style.css";
+
 function TaskDashBoard(props) {
   return (
     <div className="task-dashboard">
