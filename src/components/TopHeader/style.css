@@ -2,3 +2,9 @@
   height: 40px;
   background-color: #000;
 }
+
+@media screen and (max-width: 576px) {
+  .top-header {
+    display: none;
+  }
+}
