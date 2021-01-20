@@ -1,9 +1,13 @@
 import "./App.css";
+import { Redirect, Route, Switch } from "react-router-dom";
+import Login from "./components/Login";
 
 function App(props) {
   return (
     <div className="App">
-      <h4>Helloo</h4>
+      <Switch>
+        <Route path="/login" component={Login} />
+      </Switch>
     </div>
   );
 }
