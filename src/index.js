@@ -5,14 +5,23 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Router } from "react-router-dom";
 import { createBrowserHistory } from "history";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+import { store } from "./redux/store";
 
 export const history = createBrowserHistory();
 
 ReactDOM.render(
   // <React.StrictMode>
-  <Router history={history}>
-    <App />
-  </Router>,
+  <Provider store={store}>
+    {" "}
+    <Router history={history}>
+      <PersistGate loading={null} persistor={persistStore(store)}>
+        <App />
+      </PersistGate>
+    </Router>
+  </Provider>,
   // </React.StrictMode>
   document.getElementById("root")
 );
