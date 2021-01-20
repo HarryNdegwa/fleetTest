@@ -4,6 +4,7 @@ import "./style.css";
 import TopHeader from "../TopHeader";
 import SmallScreenTopHeader from "../SmallScreenTopHeader";
 import MainHeader from "../MainHeader";
+import Tasks from "../Tasks";
 
 function TasksWrapper(props) {
   return (
@@ -11,6 +12,9 @@ function TasksWrapper(props) {
       <TopHeader />
       <SmallScreenTopHeader />
       <MainHeader />
+      <div className="container p-0">
+        <Tasks />
+      </div>
     </div>
   );
 }
