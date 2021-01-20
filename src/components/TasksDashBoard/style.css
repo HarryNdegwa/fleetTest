@@ -4,6 +4,10 @@
 
 .dashboard-top-header-wrapper {
   height: 40px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .dashboard-top-header {
@@ -13,6 +17,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  z-index: 1000;
 }
 
 .dashboard-secondary-header {
