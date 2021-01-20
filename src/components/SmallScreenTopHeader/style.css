@@ -5,6 +5,8 @@
 @media screen and (max-width: 576px) {
   .sm-top-header {
     display: block;
-    height: 100px;
+    height: 150px;
+    background-color: black;
+    position: absolute;
   }
 }
