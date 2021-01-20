@@ -31,7 +31,8 @@
   flex: 1;
 }
 
-.task-actions-sm-wrapper {
+.task-actions-sm-wrapper,
+.task-actions-sm-icon {
   display: none;
 }
 
@@ -59,7 +60,7 @@
 
 @media screen and (max-width: 568px) {
   .task {
-    padding: 0px 10px;
+    padding: 0px 0px 0px 10px;
   }
 
   .task-date {
@@ -73,6 +74,14 @@
   .task-actions-sm-wrapper {
     flex: 1;
     display: block;
+  }
+
+  .task-actions-sm-icon {
+    height: 100%;
+    flex: 1.1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .task:hover .task-actions {

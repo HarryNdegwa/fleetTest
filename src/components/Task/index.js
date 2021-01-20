@@ -3,7 +3,7 @@ import { ImCheckboxChecked, ImCross } from "react-icons/im";
 import "./style.css";
 import DatePicker from "react-datepicker";
 import { AiFillStar } from "react-icons/ai";
-import { BsTagFill } from "react-icons/bs";
+import { BsTagFill, BsCaretLeftFill } from "react-icons/bs";
 import "react-datepicker/dist/react-datepicker.css";
 
 function Task(props) {
@@ -32,7 +32,10 @@ function Task(props) {
           <ImCross style={{ fontSize: "20px" }} className="task-action-icon" />
         </div>
       </div>
-      <div className="task-actions-sm-wrapper">
+      <div className="task-actions-sm-icon">
+        <BsCaretLeftFill />
+      </div>
+      {/* <div className="task-actions-sm-wrapper">
         <div className="task-actions">
           <AiFillStar
             style={{ fontSize: "25px" }}
@@ -44,7 +47,7 @@ function Task(props) {
           />
           <ImCross style={{ fontSize: "20px" }} className="task-action-icon" />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
