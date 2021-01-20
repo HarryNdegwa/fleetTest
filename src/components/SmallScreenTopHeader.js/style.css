@@ -1,0 +1,10 @@
+.sm-sm-top-header {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .sm-sm-top-header {
+    display: block;
+    height: 100px;
+  }
+}
