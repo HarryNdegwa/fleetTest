@@ -20,3 +20,21 @@
   height: 70px;
   width: 100%;
 }
+
+.dashboard-main-header {
+  display: none;
+}
+
+@media screen and (max-width: 576px) {
+  .dashboard-top-header-wrapper {
+    display: none;
+  }
+
+  .dashboard-main-header {
+    display: block;
+    height: 70px;
+    background-color: #9932cc;
+    display: flex;
+    align-items: center;
+  }
+}

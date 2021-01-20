@@ -2,10 +2,14 @@ import React from "react";
 import Sidebar from "./SideBar";
 import Tasks from "../Tasks";
 import "./style.css";
+import Hamburger from "../MainHeader/Hamburger";
 
 function TaskDashBoard(props) {
   return (
     <div className="task-dashboard">
+      <div className="dashboard-main-header">
+        <Hamburger />
+      </div>
       <div className="dashboard-top-header-wrapper">
         <div className="dashboard-top-header"></div>
       </div>
