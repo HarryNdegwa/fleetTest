@@ -18,7 +18,7 @@ function index(props) {
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            <h3 className="lead">Log in to save and access your lists</h3>
+            <h3 className="login-lead">Log in to save and access your lists</h3>
 
             <Formik
               initialValues={{
@@ -37,7 +37,9 @@ function index(props) {
                   {errors.email && touched.email ? (
                     <p className="form-error">{errors.email}</p>
                   ) : null}
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password" className="mt-3">
+                    Password
+                  </label>
                   <Field
                     name="password"
                     type="password"
@@ -47,7 +49,7 @@ function index(props) {
                     <p className="form-error">{errors.password}</p>
                   ) : null}
 
-                  <button className="my-3 btn btn-md auth-btn" type="submit">
+                  <button className="my-3 btn btn-lg login-btn" type="submit">
                     Login
                   </button>
                 </Form>
