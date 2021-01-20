@@ -19,6 +19,40 @@ function index(props) {
         <div className="row">
           <div className="col-lg-6">
             <h3 className="lead">Log in to save and access your lists</h3>
+
+            <Formik
+              initialValues={{
+                email: "",
+                password: "",
+              }}
+              validationSchema={loginSchema}
+              onSubmit={(values) => {
+                console.log(values);
+              }}
+            >
+              {({ errors, touched }) => (
+                <Form className="form-group login-form">
+                  <label htmlFor="email">Email</label>
+                  <Field name="email" type="email" className="form-control" />
+                  {errors.email && touched.email ? (
+                    <p className="form-error">{errors.email}</p>
+                  ) : null}
+                  <label htmlFor="password">Password</label>
+                  <Field
+                    name="password"
+                    type="password"
+                    className="form-control"
+                  />
+                  {errors.password && touched.password ? (
+                    <p className="form-error">{errors.password}</p>
+                  ) : null}
+
+                  <button className="my-3 btn btn-md auth-btn" type="submit">
+                    Login
+                  </button>
+                </Form>
+              )}
+            </Formik>
           </div>
           <div className="col-lg-6"></div>
         </div>
