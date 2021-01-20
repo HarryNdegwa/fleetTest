@@ -43,6 +43,10 @@
   flex: 1;
 }
 
+.task-actions-sm-wrapper {
+  display: none;
+}
+
 .task-actions {
   flex: 1;
   display: flex;
@@ -57,9 +61,28 @@
   border-radius: 10px;
   padding: 3px 15px;
   cursor: pointer;
+  font-size: 12px;
 }
 
 .task-action-icon {
   margin: 0px 6px;
   color: #d4d4d4;
+}
+
+@media screen and (max-width: 568px) {
+  .task {
+    padding: 0px 10px;
+  }
+
+  .task-date {
+    font-size: 8px;
+  }
+
+  .task-actions-wrapper {
+    display: none;
+  }
+
+  .task-actions-sm-wrapper {
+    display: block;
+  }
 }
