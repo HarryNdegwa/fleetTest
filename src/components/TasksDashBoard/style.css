@@ -18,6 +18,10 @@
   left: 0;
   width: 100%;
   z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff;
 }
 
 .dashboard-secondary-header {

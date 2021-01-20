@@ -4,6 +4,8 @@ import Tasks from "../Tasks";
 import "./style.css";
 import Hamburger from "../MainHeader/Hamburger";
 import { ImCopy } from "react-icons/im";
+import { Link } from "react-router-dom";
+import { FaUser } from "react-icons/fa";
 
 function TaskDashBoard(props) {
   return (
@@ -12,7 +14,16 @@ function TaskDashBoard(props) {
         <Hamburger />
       </div>
       <div className="dashboard-top-header-wrapper">
-        <div className="dashboard-top-header"></div>
+        <div className="dashboard-top-header">
+          <p>
+            <span className="mx-1">
+              <FaUser />
+            </span>
+            mike@gmail.com
+          </p>
+          <Link to="/">Manage Lists</Link>
+          <Link to="/">New List</Link>
+        </div>
       </div>
       <div className="row no-gutters">
         <div className="col-md-2 col-lg-3">
