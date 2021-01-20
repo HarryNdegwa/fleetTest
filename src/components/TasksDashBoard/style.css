@@ -1,0 +1,22 @@
+.task-dashboard {
+  position: relative;
+}
+
+.dashboard-top-header-wrapper {
+  height: 40px;
+}
+
+.dashboard-top-header {
+  background-color: black;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.dashboard-secondary-header {
+  background-color: purple;
+  height: 70px;
+  width: 100%;
+}
