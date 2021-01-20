@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
 import "./style.css";
 import { ImPlus, ImCross } from "react-icons/im";
+import MainHeader from "../MainHeader";
 
 function SavedLists(props) {
   return (
@@ -26,6 +27,8 @@ function SavedLists(props) {
           Logout
         </Link>
       </div>
+
+      <MainHeader />
       <div className="container mt-5">
         <h2>My Saved Lists</h2>
 

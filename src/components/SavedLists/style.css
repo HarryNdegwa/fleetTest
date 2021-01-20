@@ -21,7 +21,12 @@
   border: 1px solid #d4d4d4;
   padding: 4px 5px;
   border-radius: 10px;
-  margin: 0px 10px;
+  margin: 10px 10px 10px 0px;
+}
+
+.saved-list-secondary-header {
+  height: 70px;
+  background-color: purple;
 }
 
 @media screen and (max-width: 576px) {
