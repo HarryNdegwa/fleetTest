@@ -11,16 +11,20 @@ function Task(props) {
   const [startDate, setStartDate] = useState(new Date());
   return (
     <div className="task">
-      <ImCheckboxChecked />
-      <input type="text" />
-      <span className="task-date">no due date</span>
-      <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      />
-      <AiFillStar />
-      <BsTagFill />
-      <ImCross />
+      <div className="task-info">
+        <ImCheckboxChecked />
+        <input type="text" />
+        <span className="task-date">no due date</span>
+        <DatePicker
+          selected={startDate}
+          onChange={(date) => setStartDate(date)}
+        />
+      </div>
+      <div className="task-actions">
+        <AiFillStar />
+        <BsTagFill />
+        <ImCross />
+      </div>
     </div>
   );
 }
