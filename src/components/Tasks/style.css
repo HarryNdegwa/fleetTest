@@ -1,3 +1,31 @@
 .tasks {
   width: 100%;
 }
+
+.task-input {
+  border: none;
+  height: 50px;
+  font-size: 50px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.task-input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+@media screen and (max-width: 992px) {
+  .task-input {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .task-input {
+    border: none;
+    height: 50px;
+    font-size: 30px;
+    width: 100%;
+  }
+}
