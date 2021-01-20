@@ -1,5 +1,6 @@
 import React from "react";
 
+import "./style.css";
 import TopHeader from "../TopHeader";
 import SmallScreenTopHeader from "../SmallScreenTopHeader";
 import MainHeader from "../MainHeader";
