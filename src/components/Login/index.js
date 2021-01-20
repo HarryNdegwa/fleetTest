@@ -6,6 +6,7 @@ import TopHeader from "../TopHeader";
 import MainHeader from "../MainHeader";
 import SmallScreenTopHeader from "../SmallScreenTopHeader";
 import { connect } from "react-redux";
+import { loginThunkAction } from "../../redux/actions/loginActions";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email().required("Required!"),
@@ -13,6 +14,8 @@ const loginSchema = Yup.object().shape({
 });
 
 function Login(props) {
+  const { loginLoading } = props;
+  console.log(loginLoading);
   return (
     <div className="login">
       <TopHeader />
@@ -31,6 +34,7 @@ function Login(props) {
               validationSchema={loginSchema}
               onSubmit={(values) => {
                 console.log(values);
+                props.loginThunkAction(values);
               }}
             >
               {({ errors, touched }) => (
@@ -52,7 +56,11 @@ function Login(props) {
                     <p className="form-error">{errors.password}</p>
                   ) : null}
 
-                  <button className="my-3 btn btn-lg login-btn" type="submit">
+                  <button
+                    disabled={loginLoading}
+                    className="my-3 btn btn-lg login-btn"
+                    type="submit"
+                  >
                     Login
                   </button>
                 </Form>
@@ -69,8 +77,9 @@ function Login(props) {
 const mapStateToProps = (state) => {
   return {
     loginLoading: state.loginReducer.loginLoading,
+    isAuth: state.loginReducer.isAuth,
     loginError: state.loginReducer.loginError,
   };
 };
 
-export default connect(mapStateToProps, {})(Login);
+export default connect(mapStateToProps, { loginThunkAction })(Login);

@@ -23,12 +23,12 @@ const loginError = (error) => {
 
 export const loginThunkAction = (data) => {
   return (dispatch) => {
-    dispatch(loginStart);
+    dispatch(loginStart());
     axios
       .post("https://reqres.in/api/login", data)
       .then((res) => {
         console.log(res.data);
-        dispatch(loginSuccess(res.data));
+        dispatch(loginSuccess(res.data.token));
       })
       .catch((error) => {
         console.log(error.response);
