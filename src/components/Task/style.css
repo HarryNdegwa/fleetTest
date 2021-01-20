@@ -9,7 +9,7 @@
 
 .task-info {
   height: 100%;
-  flex: 9;
+  flex: 8;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -29,7 +29,7 @@
 }
 
 .task-actions-wrapper {
-  flex: 1;
+  flex: 2;
 }
 
 .task-actions-sm-wrapper,
