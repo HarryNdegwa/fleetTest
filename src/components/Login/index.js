@@ -5,13 +5,14 @@ import "./style.css";
 import TopHeader from "../TopHeader";
 import MainHeader from "../MainHeader";
 import SmallScreenTopHeader from "../SmallScreenTopHeader";
+import { connect } from "react-redux";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email().required("Required!"),
   password: Yup.string().required("Required!"),
 });
 
-function index(props) {
+function Login(props) {
   return (
     <div className="login">
       <TopHeader />
@@ -65,4 +66,11 @@ function index(props) {
   );
 }
 
-export default index;
+const mapStateToProps = (state) => {
+  return {
+    loginLoading: state.loginReducer.loginLoading,
+    loginError: state.loginReducer.loginError,
+  };
+};
+
+export default connect(mapStateToProps, {})(Login);
