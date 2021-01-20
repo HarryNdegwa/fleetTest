@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
 import "./style.css";
-import { ImPlus, ImCross } from "react-icons/im";
+import { ImPlus } from "react-icons/im";
 import MainHeader from "../MainHeader";
 
 function NewList(props) {

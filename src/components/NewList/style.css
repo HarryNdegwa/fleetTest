@@ -4,6 +4,7 @@
   justify-content: flex-end;
   height: 40px;
   color: #fff;
+  background-color: black;
 }
 
 .create-list-secondary-header {
@@ -17,5 +18,9 @@
 @media screen and (max-width: 576px) {
   .create-list-top-header {
     display: none;
+  }
+
+  .create-list-secondary-header h2 {
+    font-size: 20px;
   }
 }
