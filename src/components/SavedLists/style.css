@@ -1,0 +1,13 @@
+.saved-list-top-header {
+  height: 40px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 576px) {
+  .saved-list-top-header {
+    display: none;
+  }
+}
