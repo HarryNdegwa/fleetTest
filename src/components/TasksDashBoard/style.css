@@ -43,6 +43,15 @@
   display: none;
 }
 
+.db-link {
+  color: #fff;
+}
+
+.db-link:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 576px) {
   .dashboard-top-header-wrapper {
     display: none;
