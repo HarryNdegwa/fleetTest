@@ -12,10 +12,15 @@ export const loginReducer = (state = initialState, action) => {
     case t.LOGIN_LOADING:
       return { ...state, loginLoading: true };
     case t.LOGIN_SUCCESS:
-      return { ...state, loginLoading: false, isAuth: true, token: data };
+      return {
+        ...state,
+        loginLoading: false,
+        isAuth: true,
+        token: action.data,
+      };
     case t.LOGIN_ERROR:
-      return { ...state, loginLoading: false, loginError: data };
+      return { ...state, loginLoading: false, loginError: action.data };
     default:
-      return;
+      return state;
   }
 };
