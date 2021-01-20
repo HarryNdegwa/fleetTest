@@ -1,8 +1,14 @@
 import React from "react";
-
+import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 import "./style.css";
 import TopHeader from "../TopHeader";
 import MainHeader from "../MainHeader";
+
+const loginSchema = Yup.object().shape({
+  email: Yup.string().email().required("Required!"),
+  password: Yup.string().required("Required!"),
+});
 
 function index(props) {
   return (
