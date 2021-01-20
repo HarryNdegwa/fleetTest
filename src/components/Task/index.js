@@ -13,6 +13,7 @@ function Task(props) {
     <div className="task">
       <ImCheckboxChecked />
       <input type="text" />
+      <span className="task-date">no due date</span>
       <DatePicker
         selected={startDate}
         onChange={(date) => setStartDate(date)}
