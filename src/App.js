@@ -3,6 +3,7 @@ import { Redirect, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import TasksWrapper from "./components/TasksWrapper";
 import TasksDashBoard from "./components/TasksDashBoard";
+import SavedLists from "./components/SavedLists";
 
 function App(props) {
   return (
@@ -11,6 +12,7 @@ function App(props) {
         <Route path="/login" component={Login} />
         <Route path="/tasks" component={TasksWrapper} />
         <Route path="/tasks-dashboard" component={TasksDashBoard} />
+        <Route path="/saved-lists" component={SavedLists} />
       </Switch>
     </div>
   );

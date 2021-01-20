@@ -26,15 +26,16 @@ function SavedLists(props) {
           Logout
         </Link>
       </div>
+      <div className="container mt-5">
+        <h2>My Saved Lists</h2>
 
-      <h6>My Saved Lists</h6>
-
-      <Link to="/">
-        <span>
-          <ImPlus />
-          Create New List
-        </span>
-      </Link>
+        <Link to="/">
+          <span>
+            <ImPlus />
+            Create New List
+          </span>
+        </Link>
+      </div>
     </div>
   );
 }
