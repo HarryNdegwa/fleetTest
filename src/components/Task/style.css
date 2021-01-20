@@ -1,22 +1,65 @@
 .task {
-  height: 60px;
+  height: 70px;
   display: flex;
   align-items: center;
+  padding: 0px 40px;
 }
 
 .task-info {
-  flex: 5;
+  height: 100%;
+  flex: 9;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
+.task-inner-info {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.task-inner-info-content {
+  flex: 4;
+}
+
+.task-inner-info h6 {
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-inner-info span {
+  flex: 1;
+}
+
+.task:hover .task-actions {
+  display: block;
+}
+
+.task-actions-wrapper {
+  flex: 1;
+}
+
 .task-actions {
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  display: none;
 }
 
 .task-date {
   color: #000;
   background-color: #d4d4d4;
-  border-radius: 7px;
+  border-radius: 10px;
+  padding: 3px 15px;
+  cursor: pointer;
+}
+
+.task-action-icon {
+  margin: 0px 6px;
+  color: #d4d4d4;
 }

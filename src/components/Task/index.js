@@ -11,18 +11,28 @@ function Task(props) {
   return (
     <div className="task">
       <div className="task-info">
-        <ImCheckboxChecked />
-        <input type="text" />
-        <span className="task-date">no due date</span>
-        <DatePicker
-          selected={startDate}
-          onChange={(date) => setStartDate(date)}
-        />
+        <ImCheckboxChecked style={{ fontSize: "30px" }} />
+        <div className="task-inner-info">
+          <div className="task-inner-info-content">
+            <h6 className="mx-3">
+              Get some code done!Get some code done!Get some code done
+            </h6>
+          </div>
+          <small className="task-date">No due date</small>
+        </div>
       </div>
-      <div className="task-actions">
-        <AiFillStar />
-        <BsTagFill />
-        <ImCross />
+      <div className="task-actions-wrapper">
+        <div className="task-actions">
+          <AiFillStar
+            style={{ fontSize: "25px" }}
+            className="task-action-icon"
+          />
+          <BsTagFill
+            style={{ fontSize: "22px" }}
+            className="task-action-icon"
+          />
+          <ImCross style={{ fontSize: "20px" }} className="task-action-icon" />
+        </div>
       </div>
     </div>
   );
