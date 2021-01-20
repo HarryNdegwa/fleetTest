@@ -1,6 +1,8 @@
 import React from "react";
 import HamburgerMenu from "react-hamburger-menu";
 
+import "./style.css";
+
 function Hamburger(props) {
   const handleClick = (e) => {};
   return (

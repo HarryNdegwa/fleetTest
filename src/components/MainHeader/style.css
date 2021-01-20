@@ -4,19 +4,3 @@
   display: flex;
   align-items: center;
 }
-
-.sm-hamburger {
-  display: none;
-}
-
-@media screen and (max-width: 576px) {
-  .sm-hamburger {
-    display: block;
-    border: 1px solid #d4d4d4;
-    padding: 7px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 4px;
-  }
-}
