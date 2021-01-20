@@ -1,5 +1,18 @@
 .task {
   height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+.task-info {
+  flex: 5;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.task-actions {
+  flex: 1;
 }
 
 .task-date {
