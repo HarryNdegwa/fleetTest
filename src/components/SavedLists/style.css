@@ -7,6 +7,11 @@
   color: #fff;
 }
 
+.new-list-btn {
+  color: #fff;
+  background-color: green;
+}
+
 @media screen and (max-width: 576px) {
   .saved-list-top-header {
     display: none;

@@ -29,11 +29,11 @@ function SavedLists(props) {
       <div className="container mt-5">
         <h2>My Saved Lists</h2>
 
-        <Link to="/">
-          <span>
+        <Link to="/" className="btn btn-lg new-list-btn my-4">
+          <span className="mr-2">
             <ImPlus />
-            Create New List
           </span>
+          <span style={{ fontWeight: "bold" }}>Create a New List</span>
         </Link>
       </div>
     </div>
