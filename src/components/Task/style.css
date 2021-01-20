@@ -4,6 +4,7 @@
   align-items: center;
   padding: 0px 40px;
   max-height: 100%;
+  position: relative;
 }
 
 .task-info {
@@ -72,8 +73,27 @@
   }
 
   .task-actions-sm-wrapper {
+    display: flex;
+    background-color: black !important;
+    color: #d4d4d4 !important;
+    position: absolute;
+    right: 0px;
+    width: 150px;
+    height: 100%;
+    z-index: 100;
+  }
+
+  .task-sm-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .task-actions-close-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex: 1;
-    display: block;
   }
 
   .task-actions-sm-icon {
