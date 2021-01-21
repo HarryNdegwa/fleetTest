@@ -19,6 +19,8 @@ const checkCurrent = (data) => {
       return 0;
     case "Checked":
       return 2;
+    default:
+      return;
   }
 };
 
@@ -34,15 +36,11 @@ export const deleteTask = (data) => {
       return task !== data;
     });
 
-    console.log(s);
-
     tasks[affected] = s;
-
-    console.log(tasks);
 
     dispatch({
       type: t.DELETE_TASK,
-      data: [...tasks[0], ...task[1], ...task[2]],
+      data: [...tasks[0], ...tasks[1], ...tasks[2]],
     });
   };
 };

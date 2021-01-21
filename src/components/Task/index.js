@@ -8,6 +8,8 @@ import {
   BsFillCaretRightFill,
 } from "react-icons/bs";
 import "react-datepicker/dist/react-datepicker.css";
+import { connect } from "react-redux";
+import { deleteTask } from "../../redux/actions/taskActions";
 
 function Task(props) {
   const [showActions, setShowActions] = useState(false);
@@ -20,6 +22,7 @@ function Task(props) {
     const proceed = confirm("Delete this task?");
     if (proceed) {
       // delete function
+      props.deleteTask(data);
     } else {
       return;
     }
@@ -88,4 +91,4 @@ function Task(props) {
   );
 }
 
-export default Task;
+export default connect(null, { deleteTask })(Task);
