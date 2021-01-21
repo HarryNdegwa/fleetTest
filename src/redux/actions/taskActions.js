@@ -44,3 +44,18 @@ export const deleteTask = (data) => {
     });
   };
 };
+
+export const addTask = (data) => {
+  return (dispatch, getState) => {
+    const persistedList = getState().listReducer.persistedList;
+    const currentList = getState().listReducer.lists[persistedList];
+    const tasks = currentList.tasks;
+
+    tasks[1].unshift(data);
+
+    dispatch({
+      type: t.ADD_TASK,
+      data: [...tasks[0], ...tasks[1], ...tasks[2]],
+    });
+  };
+};
