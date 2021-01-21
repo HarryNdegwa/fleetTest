@@ -27,11 +27,9 @@ export const loginThunkAction = (data) => {
     axios
       .post("https://reqres.in/api/login", data)
       .then((res) => {
-        console.log(res.data);
         dispatch(loginSuccess(res.data.token));
       })
       .catch((error) => {
-        console.log(error.response);
         dispatch(loginError(error));
       });
   };

@@ -36,7 +36,6 @@ function Login(props) {
               }}
               validationSchema={loginSchema}
               onSubmit={(values) => {
-                console.log(values);
                 props.loginThunkAction(values);
               }}
             >

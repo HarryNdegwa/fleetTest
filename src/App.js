@@ -1,7 +1,6 @@
 import "./App.css";
 import { Redirect, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
-import TasksWrapper from "./components/TasksWrapper";
 import TasksDashBoard from "./components/TasksDashBoard";
 import SavedLists from "./components/SavedLists";
 import NewList from "./components/NewList";
@@ -23,7 +22,6 @@ function App(props) {
           path="/saved-lists"
           render={() => (isAuth ? <SavedLists /> : <Redirect to="/login" />)}
         />
-        render={() => (isAuth ? <NewList /> : <Redirect to="/login" />)}
       </Switch>
     </div>
   );
