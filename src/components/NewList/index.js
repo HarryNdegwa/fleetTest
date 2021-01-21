@@ -5,6 +5,9 @@ import { AiOutlineBars } from "react-icons/ai";
 import "./style.css";
 import { ImPlus } from "react-icons/im";
 import MainHeader from "../MainHeader";
+import { saveList } from "../../redux/actions/listActions";
+import { connect } from "react-redux";
+import { history } from "../../index";
 
 function NewList(props) {
   const [task, setTask] = useState("");
@@ -16,7 +19,7 @@ function NewList(props) {
     if (task.length === 0) {
       return;
     }
-    if (e.keyCode === "Enter") {
+    if (e.key === "Enter") {
       // save list
       const t = {
         title: task,
@@ -32,8 +35,9 @@ function NewList(props) {
         tasks: { starredTasks: [], unStarredTasks: [t], checkedTasks: [] },
       };
 
-      // persist list id
+      props.saveList(list);
       // redirect to dashboard
+      history.push("/tasks-dashboard");
     }
   };
 
@@ -45,8 +49,6 @@ function NewList(props) {
 
     return `${month}1/${day}/${year}`;
   };
-
-  console.log(processDate());
 
   return (
     <div className="new-list">
@@ -89,4 +91,4 @@ function NewList(props) {
   );
 }
 
-export default NewList;
+export default connect(null, { saveList })(NewList);
