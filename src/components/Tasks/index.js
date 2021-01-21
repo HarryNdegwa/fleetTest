@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import "./style.css";
 import Task from "../Task";
-import { saveList } from "../../redux/actions/listActions";
+import { addTask } from "../../redux/actions/taskActions";
 import { v1 as uuidv1 } from "uuid";
 
 function Tasks(props) {
@@ -29,22 +29,9 @@ function Tasks(props) {
         current: "unStarred",
         id: uuidv1(),
       };
-      const list = {
-        listName: `My to-do list ${processDate()}`,
-        tasks: [[], [t], []],
-      };
 
-      props.saveList(list);
+      props.addTask(t);
     }
-  };
-
-  const processDate = () => {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth();
-    const year = date.getFullYear();
-
-    return `${month}1/${day}/${year}`;
   };
 
   return (
@@ -70,4 +57,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { saveList })(Tasks);
+export default connect(mapStateToProps, { addTask })(Tasks);
