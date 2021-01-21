@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
@@ -7,6 +7,11 @@ import { ImPlus } from "react-icons/im";
 import MainHeader from "../MainHeader";
 
 function NewList(props) {
+  const [task, setTask] = useState("");
+  const handleInputChange = (e) => {
+    console.log(e.target.value);
+    setTask(e.target.value);
+  };
   return (
     <div className="new-list">
       <div className="create-list-top-header">
@@ -40,6 +45,7 @@ function NewList(props) {
         <input
           className="mt-3 new-list-input"
           placeholder="Type here e.g. Buy Bacon"
+          onChange={handleInputChange}
         />
       </div>
     </div>
