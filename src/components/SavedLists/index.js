@@ -11,7 +11,7 @@ function SavedLists(props) {
   const handleListClick = (e, id) => {
     // persist list id
   };
-  const { list } = props;
+  const { lists } = props;
   return (
     <div className="saved-lists">
       <div className="saved-list-top-header">
@@ -45,8 +45,8 @@ function SavedLists(props) {
         </Link>
 
         <div className="saved-list-wrapper">
-          {list &&
-            list.map((list, idx) => {
+          {lists &&
+            lists.map((list, idx) => {
               <span key={idx} className="saved-list">
                 <h6
                   style={{ display: "inline-block" }}
@@ -69,7 +69,7 @@ function SavedLists(props) {
 
 const mapStateToProps = (state) => {
   return {
-    list: state.listReducer.list,
+    lists: state.listReducer.lists,
   };
 };
 

@@ -1,5 +1,5 @@
 const initialState = {
-  list: null,
+  lists: null,
   starred: [],
   normal: [],
   checked: [],
