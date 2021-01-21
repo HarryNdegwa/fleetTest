@@ -32,7 +32,7 @@ function NewList(props) {
       };
       const list = {
         listName: `My to-do list ${processDate()}`,
-        tasks: { starredTasks: [], unStarredTasks: [t], checkedTasks: [] },
+        tasks: [[], [t], []],
       };
 
       props.saveList(list);
