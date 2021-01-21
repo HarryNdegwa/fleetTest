@@ -6,3 +6,4 @@ export const SETUP_TASKS_ARRAY = "SETUP_TASKS_ARRAY";
 export const DELETE_TASK = "DELETE_TASK";
 export const ADD_TASK = "ADD_TASK";
 export const UPDATE_LIST_TASKS = "UPDATE_LIST_TASKS";
+export const LOGOUT = "LOGOUT";
