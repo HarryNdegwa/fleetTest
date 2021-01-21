@@ -22,7 +22,7 @@ function Task(props) {
     const proceed = confirm("Delete this task?");
     if (proceed) {
       // delete function
-      props.deleteTask(data);
+      props.deleteTask(props.tasks, data);
       setShowActions(!showActions);
     } else {
       return;
@@ -93,4 +93,10 @@ function Task(props) {
   );
 }
 
-export default connect(null, { deleteTask })(Task);
+const mapStateToProps = (state) => {
+  return {
+    tasks: state.taskReducer.tasks,
+  };
+};
+
+export default connect(mapStateToProps, { deleteTask })(Task);

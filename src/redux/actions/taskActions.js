@@ -35,23 +35,14 @@ const checkCurrent = (data) => {
   }
 };
 
-export const deleteTask = (data) => {
-  return (dispatch, getState) => {
-    const persistedList = getState().listReducer.persistedList;
-    const currentList = getState().listReducer.lists[persistedList];
-    const tasks = currentList.tasks;
-
-    const affected = checkCurrent(data);
-
-    const s = tasks[affected].filter((task, idx) => {
+export const deleteTask = (tasks, data) => {
+  return (dispatch) => {
+    const s = tasks.filter((task, _idx) => {
       return task !== data;
     });
-
-    tasks[affected] = s;
-
     dispatch({
       type: t.DELETE_TASK,
-      data: [...tasks[0], ...tasks[1], ...tasks[2]],
+      data: s,
     });
   };
 };
