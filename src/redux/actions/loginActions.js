@@ -21,6 +21,12 @@ const loginError = (error) => {
   };
 };
 
+export const logout = () => {
+  return {
+    type: t.LOGOUT,
+  };
+};
+
 export const loginThunkAction = (data) => {
   return (dispatch) => {
     dispatch(loginStart());
