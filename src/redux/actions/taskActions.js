@@ -1,5 +1,7 @@
 import * as t from "./actionsType";
 
+import { updateListTasks } from "../actions/listActions";
+
 const joinTaskArrays = (tasks) => {
   return [...tasks[0], ...tasks[1], ...tasks[2]];
 };
@@ -44,6 +46,7 @@ export const deleteTask = (tasks, data) => {
       type: t.DELETE_TASK,
       data: s,
     });
+    dispatch(updateListTasks(s, data));
   };
 };
 

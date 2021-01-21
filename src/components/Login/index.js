@@ -17,7 +17,7 @@ const loginSchema = Yup.object().shape({
 function Login(props) {
   const { loginLoading, isAuth } = props;
   if (isAuth) {
-    return <Redirect to="/tasks-dashboard" />;
+    return <Redirect to="/new-list" />;
   }
   return (
     <div className="login">

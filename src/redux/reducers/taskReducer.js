@@ -9,7 +9,6 @@ export const taskReducer = (state = initialState, action) => {
     case t.SETUP_TASKS_ARRAY:
       return { ...state, tasks: action.data };
     case t.DELETE_TASK:
-      console.log("Data is " + action.data);
       return { ...state, tasks: action.data };
     case t.ADD_TASK:
       return { ...state, tasks: action.data };
