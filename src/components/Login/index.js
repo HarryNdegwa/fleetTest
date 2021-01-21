@@ -1,5 +1,6 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import { Redirect } from "react-router-dom";
 import * as Yup from "yup";
 import "./style.css";
 import TopHeader from "../TopHeader";
@@ -14,8 +15,10 @@ const loginSchema = Yup.object().shape({
 });
 
 function Login(props) {
-  const { loginLoading } = props;
-  console.log(loginLoading);
+  const { loginLoading, isAuth } = props;
+  if (isAuth) {
+    return <Redirect to="/tasks-dashboard" />;
+  }
   return (
     <div className="login">
       <TopHeader />
