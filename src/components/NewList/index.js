@@ -10,20 +10,20 @@ function NewList(props) {
   return (
     <div className="new-list">
       <div className="create-list-top-header">
-        <p className="mr-3">
+        <Link to="/account" className="link mr-3">
           <span className="mx-1">
             <FaUser />
           </span>
           mike@gmail.com
-        </p>
+        </Link>
 
-        <Link to="/" className="db-link mr-3">
+        <Link to="/saved-lists" className="link mr-3">
           <span className="mr-1">
             <AiOutlineBars />
           </span>
           Manage Lists
         </Link>
-        <Link to="/" className="db-link mr-3">
+        <Link to="/new-list" className="link mr-3">
           <span className="mr-1">
             <ImPlus />
           </span>
