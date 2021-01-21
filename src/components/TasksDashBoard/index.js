@@ -15,7 +15,7 @@ function TaskDashBoard(props) {
   useEffect(() => {
     // setup tasks array of the persistedList
     props.setUpTasksArray(props.lists, props.persistedList);
-  }, [props.persistedList]);
+  }, []);
 
   return (
     <div className="task-dashboard">

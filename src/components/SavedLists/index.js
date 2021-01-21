@@ -57,7 +57,7 @@ function SavedLists(props) {
 
         <div className="saved-list-wrapper">
           {lists &&
-            lists.map((list, idx) => {
+            lists.map((list, idx) => (
               <span key={idx} className="saved-list">
                 <h6
                   style={{ display: "inline-block" }}
@@ -70,8 +70,8 @@ function SavedLists(props) {
                   style={{ fontSize: "10px" }}
                   className="task-action-icon"
                 />
-              </span>;
-            })}
+              </span>
+            ))}
         </div>
       </div>
     </div>
