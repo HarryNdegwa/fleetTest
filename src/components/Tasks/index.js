@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import "./style.css";
 import Task from "../Task";
 
 function Tasks(props) {
+  useEffect(() => {}, [props.tasks]);
   const { tasks } = props;
   return (
     <div className="tasks">
