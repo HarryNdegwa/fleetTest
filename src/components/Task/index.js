@@ -30,6 +30,7 @@ function Task(props) {
   };
 
   const { data } = props;
+  console.log(data);
   return (
     <div className="task">
       <div className="task-info">

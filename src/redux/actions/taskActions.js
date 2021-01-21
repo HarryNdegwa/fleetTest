@@ -1,12 +1,10 @@
 import * as t from "./actionsType";
 
-export const setUpTasksArray = (id) => {
-  return (dispatch, getState) => {
-    const tasks =
-      getState().listReducer.lists && getState().listReducer.lists[id].tasks;
+export const setUpTasksArray = (data) => {
+  return (dispatch) => {
     dispatch({
       type: t.SETUP_TASKS_ARRAY,
-      data: tasks ? [...tasks[0], ...tasks[1], ...tasks[2]] : [],
+      data: data,
     });
   };
 };
@@ -45,17 +43,16 @@ export const deleteTask = (data) => {
   };
 };
 
-export const addTask = (data) => {
+export const addTask = (data, payload) => {
   return (dispatch, getState) => {
-    const persistedList = getState().listReducer.persistedList;
-    const currentList = getState().listReducer.lists[persistedList];
-    const tasks = currentList.tasks;
-
-    const tasks1 = [data, ...tasks[1]];
+    const tasks = getState().taskReducer.tasks;
+    console.log(tasks);
+    const tasks1 = [payload, ...data];
+    console.log(tasks1);
 
     dispatch({
       type: t.ADD_TASK,
-      data: [...tasks[0], ...tasks1, ...tasks[2]],
+      data: [tasks[0], tasks1, tasks[2]],
     });
   };
 };
