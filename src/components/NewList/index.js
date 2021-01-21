@@ -34,6 +34,10 @@ function NewList(props) {
       <div className="create-list-secondary-header">
         <h2>Create your to-do list below</h2>
       </div>
+      <input
+        className="mt-3 new-list-input"
+        placeholder="Type here e.g. Buy Bacon"
+      />
     </div>
   );
 }

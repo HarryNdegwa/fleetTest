@@ -15,12 +15,27 @@
   justify-content: flex-start;
 }
 
+.new-list-input {
+  width: 100%;
+  border: none;
+  font-size: 40px;
+}
+
+.new-list-input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 @media screen and (max-width: 576px) {
   .create-list-top-header {
     display: none;
   }
 
   .create-list-secondary-header h2 {
+    font-size: 20px;
+  }
+
+  .new-list-input {
     font-size: 20px;
   }
 }
