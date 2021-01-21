@@ -6,13 +6,18 @@ import "./style.css";
 import { ImPlus, ImCross } from "react-icons/im";
 import MainHeader from "../MainHeader";
 import { connect } from "react-redux";
+import { logout } from "../../redux/actions/loginActions";
+import { history } from "../../index";
 
 function SavedLists(props) {
   const handleListClick = (e, id) => {
     // persist list id
   };
 
-  const handleLogout = () => {};
+  const handleLogout = () => {
+    props.logout();
+    history.push("/login");
+  };
   const { lists } = props;
   return (
     <div className="saved-lists">
@@ -30,7 +35,11 @@ function SavedLists(props) {
           </span>
           My Saved Lists
         </Link>
-        <p className="link mr-3" onClick={handleLogout}>
+        <p
+          className="link mr-3"
+          style={{ cursor: "pointer" }}
+          onClick={handleLogout}
+        >
           Logout
         </p>
       </div>
@@ -75,4 +84,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(SavedLists);
+export default connect(mapStateToProps, { logout })(SavedLists);

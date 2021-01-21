@@ -20,6 +20,8 @@ export const loginReducer = (state = initialState, action) => {
       };
     case t.LOGIN_ERROR:
       return { ...state, loginLoading: false, loginError: action.data };
+    case t.LOGOUT:
+      return { ...state, isAuth: false };
     default:
       return state;
   }
