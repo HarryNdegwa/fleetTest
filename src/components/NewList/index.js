@@ -9,9 +9,45 @@ import MainHeader from "../MainHeader";
 function NewList(props) {
   const [task, setTask] = useState("");
   const handleInputChange = (e) => {
-    console.log(e.target.value);
     setTask(e.target.value);
   };
+
+  const handleKeyPress = (e) => {
+    if (task.length === 0) {
+      return;
+    }
+    if (e.keyCode === "Enter") {
+      // save list
+      const t = {
+        title: task,
+        checked: false,
+        starred: false,
+        color: "white",
+        dueDate: null,
+      };
+      const list = {
+        listName: `My to-do list ${processDate()}`,
+        current: "normal",
+        currentId: null,
+        tasks: [t],
+      };
+
+      // persist list id
+      // redirect to dashboard
+    }
+  };
+
+  const processDate = () => {
+    const date = new Date();
+    const day = date.getDate();
+    const month = date.getMonth();
+    const year = date.getFullYear();
+
+    return `${month}1/${day}/${year}`;
+  };
+
+  console.log(processDate());
+
   return (
     <div className="new-list">
       <div className="create-list-top-header">
@@ -46,6 +82,7 @@ function NewList(props) {
           className="mt-3 new-list-input"
           placeholder="Type here e.g. Buy Bacon"
           onChange={handleInputChange}
+          onKeyPress={handleKeyPress}
         />
       </div>
     </div>
