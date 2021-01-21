@@ -37,7 +37,7 @@ function SavedLists(props) {
       <div className="container mt-5">
         <h2>My Saved Lists</h2>
 
-        <Link to="/" className="btn btn-lg new-list-btn my-4">
+        <Link to="/new-list" className="btn btn-lg new-list-btn my-4">
           <span className="mr-2">
             <ImPlus />
           </span>
