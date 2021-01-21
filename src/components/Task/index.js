@@ -23,6 +23,7 @@ function Task(props) {
     if (proceed) {
       // delete function
       props.deleteTask(data);
+      setShowActions(!showActions);
     } else {
       return;
     }

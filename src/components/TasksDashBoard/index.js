@@ -14,7 +14,9 @@ import { setUpTasksArray } from "../../redux/actions/taskActions";
 function TaskDashBoard(props) {
   useEffect(() => {
     // setup tasks array of the persistedList
-    props.setUpTasksArray(props.persistedList);
+    setTimeout(() => {
+      props.setUpTasksArray(props.persistedList);
+    }, 3000);
   }, [props.persistedList]);
   return (
     <div className="task-dashboard">

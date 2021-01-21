@@ -37,6 +37,7 @@ function NewList(props) {
       };
 
       props.saveList(list);
+      setTask("");
       // redirect to dashboard
       history.push("/tasks-dashboard");
     }

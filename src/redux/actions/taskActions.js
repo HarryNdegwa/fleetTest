@@ -51,11 +51,11 @@ export const addTask = (data) => {
     const currentList = getState().listReducer.lists[persistedList];
     const tasks = currentList.tasks;
 
-    tasks[1].unshift(data);
+    const tasks1 = [data, ...tasks[1]];
 
     dispatch({
       type: t.ADD_TASK,
-      data: [...tasks[0], ...tasks[1], ...tasks[2]],
+      data: [...tasks[0], ...tasks1, ...tasks[2]],
     });
   };
 };

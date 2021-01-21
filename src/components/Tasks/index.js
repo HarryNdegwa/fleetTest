@@ -31,6 +31,7 @@ function Tasks(props) {
       };
 
       props.addTask(t);
+      setTask("");
     }
   };
 
