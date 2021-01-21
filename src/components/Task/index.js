@@ -14,14 +14,17 @@ function Task(props) {
   const handleShowActionsClick = (e) => {
     setShowActions(!showActions);
   };
+  const { data } = props;
   return (
     <div className="task">
       <div className="task-info">
         <ImCheckboxChecked style={{ fontSize: "30px" }} />
         <div className="task-inner-info">
           <h6 className="mx-3">
-            Get some code done Get some code done{" "}
-            <small className="task-date">No due date</small>
+            {data.title}
+            <small className="task-date ml-2">
+              {data.dueDate ? data.dueDate : "No due date"}
+            </small>
           </h6>
         </div>
       </div>
