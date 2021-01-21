@@ -47,12 +47,12 @@ function SavedLists(props) {
         <div className="saved-list-wrapper">
           {list &&
             list.map((list, idx) => {
-              <span key={list.id} className="saved-list">
+              <span key={idx} className="saved-list">
                 <h6
                   style={{ display: "inline-block" }}
-                  onClick={(e) => handleListClick(e, 1)}
+                  onClick={(e) => handleListClick(e, idx)}
                 >
-                  Helloo world
+                  {list.title}
                 </h6>
                 <span className="badge bg-dark mx-2 text-white">10</span>
                 <ImCross
