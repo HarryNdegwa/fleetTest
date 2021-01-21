@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Sidebar from "./SideBar";
 import Tasks from "../Tasks";
 import "./style.css";
@@ -8,8 +8,13 @@ import { Link } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
 import { ImPlus } from "react-icons/im";
+import { connect } from "react-redux";
 
 function TaskDashBoard(props) {
+  useEffect(() => {
+    // setup tasks array of the persistedList
+  }, [props.persistedList]);
+  const { persistedList } = props;
   return (
     <div className="task-dashboard">
       <div className="dashboard-main-header">
@@ -64,4 +69,10 @@ function TaskDashBoard(props) {
   );
 }
 
-export default TaskDashBoard;
+const mapStateToProps = (state) => {
+  return {
+    persistedList: state.listReducer.persistedList,
+  };
+};
+
+export default connect(mapStateToProps)(TaskDashBoard);
