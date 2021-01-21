@@ -10,6 +10,8 @@ export const taskReducer = (state = initialState, action) => {
       return { ...state, tasks: action.data };
     case t.DELETE_TASK:
       return { ...state, tasks: action.data };
+    case t.ADD_TASK:
+      return { ...state, tasks: action.data };
     default:
       return state;
   }
