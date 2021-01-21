@@ -30,7 +30,7 @@ function Tasks(props) {
         id: uuidv1(),
       };
 
-      props.addTask(tasks, t);
+      // props.addTask(tasks, t);
       setTask("");
     }
   };

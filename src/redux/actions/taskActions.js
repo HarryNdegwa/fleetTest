@@ -46,9 +46,7 @@ export const deleteTask = (data) => {
 export const addTask = (data, payload) => {
   return (dispatch, getState) => {
     const tasks = getState().taskReducer.tasks;
-    console.log(tasks);
     const tasks1 = [payload, ...data];
-    console.log(tasks1);
 
     dispatch({
       type: t.ADD_TASK,
