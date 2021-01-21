@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./style.css";
 
 function Sidebar(props) {
-  const { lists, persistedList } = props;
+  const { lists } = props;
   return (
     <div className="sidebar">
       <div style={{ height: "70px" }}></div>

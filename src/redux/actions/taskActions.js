@@ -24,19 +24,6 @@ export const setUpTasksArray = (data, id) => {
   }
 };
 
-const checkCurrent = (data) => {
-  switch (data.current) {
-    case "unStarred":
-      return 1;
-    case "Starred":
-      return 0;
-    case "Checked":
-      return 2;
-    default:
-      return;
-  }
-};
-
 export const deleteTask = (tasks, data) => {
   return (dispatch) => {
     const s = tasks.filter((task, _idx) => {
