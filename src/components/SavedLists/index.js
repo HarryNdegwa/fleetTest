@@ -7,6 +7,9 @@ import { ImPlus, ImCross } from "react-icons/im";
 import MainHeader from "../MainHeader";
 
 function SavedLists(props) {
+  const handleListClick = (e, id) => {
+    // persist list id
+  };
   return (
     <div className="saved-lists">
       <div className="saved-list-top-header">
@@ -41,7 +44,12 @@ function SavedLists(props) {
 
         <div className="saved-list-wrapper">
           <span className="saved-list">
-            <h6 style={{ display: "inline-block" }}>Helloo world</h6>
+            <h6
+              style={{ display: "inline-block" }}
+              onClick={(e) => handleListClick(e, 1)}
+            >
+              Helloo world
+            </h6>
             <span className="badge bg-dark mx-2 text-white">10</span>
             <ImCross
               style={{ fontSize: "10px" }}
@@ -49,7 +57,12 @@ function SavedLists(props) {
             />
           </span>
           <span className="saved-list">
-            <h6 style={{ display: "inline-block" }}>Helloo world</h6>
+            <h6
+              style={{ display: "inline-block" }}
+              onClick={(e) => handleListClick(e, 1)}
+            >
+              Helloo world
+            </h6>
             <span className="badge bg-dark mx-2 text-white">10</span>
             <ImCross
               style={{ fontSize: "10px" }}

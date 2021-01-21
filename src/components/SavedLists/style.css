@@ -24,6 +24,11 @@
   margin: 10px 10px 10px 0px;
 }
 
+.saved-list h6 {
+  color: purple;
+  cursor: pointer;
+}
+
 .saved-list-secondary-header {
   height: 70px;
   background-color: purple;
