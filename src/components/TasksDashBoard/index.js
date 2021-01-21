@@ -12,10 +12,11 @@ import { connect } from "react-redux";
 import { setUpTasksArray } from "../../redux/actions/taskActions";
 
 function TaskDashBoard(props) {
+  const { persistedList, lists, setUpTasksArray } = props;
   useEffect(() => {
     // setup tasks array of the persistedList
-    props.setUpTasksArray(props.lists, props.persistedList);
-  }, []);
+    setUpTasksArray(lists, persistedList);
+  }, [persistedList, lists, setUpTasksArray]);
 
   return (
     <div className="task-dashboard">
