@@ -15,9 +15,17 @@ function Task(props) {
     setShowActions(!showActions);
   };
 
-  const handleDeleteTask = (e, data) => {};
+  const handleDeleteTask = (e, data) => {
+    // eslint-disable-next-line no-restricted-globals
+    const proceed = confirm("Delete this task?");
+    if (proceed) {
+      // delete function
+    } else {
+      return;
+    }
+  };
 
-  const { data, id } = props;
+  const { data } = props;
   return (
     <div className="task">
       <div className="task-info">
@@ -41,7 +49,11 @@ function Task(props) {
             style={{ fontSize: "22px" }}
             className="task-action-icon"
           />
-          <ImCross style={{ fontSize: "20px" }} className="task-action-icon" />
+          <ImCross
+            style={{ fontSize: "20px" }}
+            className="task-action-icon"
+            onClick={(e) => handleDeleteTask(e, data)}
+          />
         </div>
       </div>
       <div className="task-actions-sm-icon">
