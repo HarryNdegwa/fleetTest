@@ -17,19 +17,19 @@ function TaskDashBoard(props) {
       </div>
       <div className="dashboard-top-header-wrapper">
         <div className="dashboard-top-header">
-          <p className="mr-3">
+          <Link to="/account" className="link mr-3">
             <span className="mx-1">
               <FaUser />
             </span>
             mike@gmail.com
-          </p>
-          <Link to="/" className="db-link mr-3">
+          </Link>
+          <Link to="/saved-lists" className="link mr-3">
             <span className="mr-1">
               <AiOutlineBars />
             </span>
             Manage Lists
           </Link>
-          <Link to="/" className="db-link mr-3">
+          <Link to="/new-list" className="link mr-3">
             <span className="mr-1">
               <ImPlus />
             </span>
