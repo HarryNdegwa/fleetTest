@@ -9,12 +9,13 @@ import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
 import { ImPlus } from "react-icons/im";
 import { connect } from "react-redux";
+import { setUpTasksArray } from "../../redux/actions/taskActions";
 
 function TaskDashBoard(props) {
   useEffect(() => {
     // setup tasks array of the persistedList
+    props.setUpTasksArray(props.persistedList);
   }, [props.persistedList]);
-  const { persistedList } = props;
   return (
     <div className="task-dashboard">
       <div className="dashboard-main-header">
@@ -75,4 +76,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(TaskDashBoard);
+export default connect(mapStateToProps, { setUpTasksArray })(TaskDashBoard);
