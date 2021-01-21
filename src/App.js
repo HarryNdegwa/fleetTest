@@ -22,6 +22,10 @@ function App(props) {
           path="/saved-lists"
           render={() => (isAuth ? <SavedLists /> : <Redirect to="/login" />)}
         />
+        <Route
+          path="/new-list"
+          render={() => (isAuth ? <NewList /> : <Redirect to="/login" />)}
+        />
       </Switch>
     </div>
   );
