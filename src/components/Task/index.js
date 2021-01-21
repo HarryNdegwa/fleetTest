@@ -14,7 +14,10 @@ function Task(props) {
   const handleShowActionsClick = (e) => {
     setShowActions(!showActions);
   };
-  const { data } = props;
+
+  const handleDeleteTask = (e, data) => {};
+
+  const { data, id } = props;
   return (
     <div className="task">
       <div className="task-info">
@@ -64,6 +67,7 @@ function Task(props) {
             <ImCross
               style={{ fontSize: "15px" }}
               className="task-action-icon"
+              onClick={(e) => handleDeleteTask(e, data)}
             />
           </div>
         </div>

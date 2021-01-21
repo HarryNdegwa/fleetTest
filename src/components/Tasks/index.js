@@ -15,7 +15,7 @@ function Tasks(props) {
       />
       {tasks &&
         tasks.map((task, idx) => {
-          return <Task key={idx} data={task} />;
+          return <Task key={idx} data={task} id={idx} />;
         })}
     </div>
   );

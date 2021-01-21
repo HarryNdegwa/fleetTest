@@ -8,6 +8,7 @@ import MainHeader from "../MainHeader";
 import { saveList } from "../../redux/actions/listActions";
 import { connect } from "react-redux";
 import { history } from "../../index";
+import { v1 as uuidv1 } from "uuid";
 
 function NewList(props) {
   const [task, setTask] = useState("");
@@ -28,7 +29,7 @@ function NewList(props) {
         color: "white",
         dueDate: null,
         current: "unStarred",
-        currentId: 0,
+        id: uuidv1(),
       };
       const list = {
         listName: `My to-do list ${processDate()}`,

@@ -8,9 +8,10 @@ function Sidebar(props) {
     <div className="sidebar">
       <div style={{ height: "70px" }}></div>
       <ul>
-        {lists.map((list, idx) => {
-          return <li key={idx}>{list.listName}</li>;
-        })}
+        {lists &&
+          lists.map((list, idx) => {
+            return <li key={idx}>{list.listName}</li>;
+          })}
       </ul>
     </div>
   );
