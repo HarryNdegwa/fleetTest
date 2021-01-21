@@ -11,6 +11,8 @@ function SavedLists(props) {
   const handleListClick = (e, id) => {
     // persist list id
   };
+
+  const handleLogout = () => {};
   const { lists } = props;
   return (
     <div className="saved-lists">
@@ -28,9 +30,9 @@ function SavedLists(props) {
           </span>
           My Saved Lists
         </Link>
-        <Link to="/" className="link mr-3">
+        <p className="link mr-3" onClick={handleLogout}>
           Logout
-        </Link>
+        </p>
       </div>
 
       <MainHeader />
