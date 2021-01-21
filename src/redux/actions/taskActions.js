@@ -1,12 +1,25 @@
 import * as t from "./actionsType";
 
-export const setUpTasksArray = (data) => {
-  return (dispatch) => {
-    dispatch({
-      type: t.SETUP_TASKS_ARRAY,
-      data: data,
-    });
-  };
+const joinTaskArrays = (tasks) => {
+  return [...tasks[0], ...tasks[1], ...tasks[2]];
+};
+
+export const setUpTasksArray = (data, id) => {
+  if (data) {
+    return (dispatch) => {
+      dispatch({
+        type: t.SETUP_TASKS_ARRAY,
+        data: joinTaskArrays(data[id].tasks),
+      });
+    };
+  } else {
+    return (dispatch) => {
+      dispatch({
+        type: t.SETUP_TASKS_ARRAY,
+        data: null,
+      });
+    };
+  }
 };
 
 const checkCurrent = (data) => {

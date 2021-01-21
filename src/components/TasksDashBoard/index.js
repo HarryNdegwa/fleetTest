@@ -14,9 +14,9 @@ import { setUpTasksArray } from "../../redux/actions/taskActions";
 function TaskDashBoard(props) {
   useEffect(() => {
     // setup tasks array of the persistedList
-    console.log(props.tasks);
-    props.setUpTasksArray(props.tasks);
+    props.setUpTasksArray(props.lists, props.persistedList);
   }, [props.persistedList]);
+
   return (
     <div className="task-dashboard">
       <div className="dashboard-main-header">
@@ -74,7 +74,7 @@ function TaskDashBoard(props) {
 const mapStateToProps = (state) => {
   return {
     persistedList: state.listReducer.persistedList,
-    tasks: state.taskReducer.tasks,
+    lists: state.listReducer.lists,
   };
 };
 
