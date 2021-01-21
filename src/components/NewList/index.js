@@ -24,12 +24,12 @@ function NewList(props) {
         starred: false,
         color: "white",
         dueDate: null,
+        current: "unStarred",
+        currentId: 0,
       };
       const list = {
         listName: `My to-do list ${processDate()}`,
-        current: "normal",
-        currentId: null,
-        tasks: [t],
+        tasks: { starredTasks: [], unStarredTasks: [t], checkedTasks: [] },
       };
 
       // persist list id
