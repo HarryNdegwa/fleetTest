@@ -39,6 +39,8 @@ export const listReducer = (state = initialState, action) => {
           return list;
         }),
       };
+    case t.PERSIST_LIST:
+      return { ...state, persistedList: action.data };
     default:
       return state;
   }

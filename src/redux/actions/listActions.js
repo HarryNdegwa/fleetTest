@@ -33,7 +33,7 @@ export const updateLists = (data) => {
   };
 };
 
-export const persistListWrapper = (id, history) => {
+export const persistListWrapper = (id) => {
   return (dispatch, getState) => {
     let list = null;
     const lists = getState().listReducer.lists;
@@ -47,6 +47,6 @@ export const persistListWrapper = (id, history) => {
       type: t.PERSIST_LIST,
       data: list,
     });
-    history.push("/tasks-dashboard");
+    // history.push("/tasks-dashboard");
   };
 };

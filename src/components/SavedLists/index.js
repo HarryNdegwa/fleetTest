@@ -8,10 +8,13 @@ import MainHeader from "../MainHeader";
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/loginActions";
 import { history } from "../../index";
+import { persistListWrapper } from "../../redux/actions/listActions";
 
 function SavedLists(props) {
   const handleListClick = (e, id) => {
     // persist list id
+    persistListWrapper(id);
+    history.push("/tasks-dashboard");
   };
 
   const handleLogout = () => {
@@ -96,4 +99,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { logout })(SavedLists);
+export default connect(mapStateToProps, { logout, persistListWrapper })(
+  SavedLists
+);
