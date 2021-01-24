@@ -18,7 +18,17 @@ function SavedLists(props) {
     props.logout();
     history.push("/login");
   };
+
+  const getListTasksCount = (tasks) => {
+    let count = 0;
+    for (let i = 0; i < tasks.length; i++) {
+      count += tasks[i].length;
+    }
+    return count;
+  };
+
   const { lists } = props;
+  console.log(lists);
   return (
     <div className="saved-lists">
       <div className="saved-list-top-header">
@@ -60,12 +70,14 @@ function SavedLists(props) {
             lists.map((list, idx) => (
               <span key={idx} className="saved-list">
                 <h6
-                  style={{ display: "inline-block" }}
+                  style={{ display: "inline-block", cursor: "pointer" }}
                   onClick={(e) => handleListClick(e, idx)}
                 >
-                  {list.title}
+                  {list.listName}
                 </h6>
-                <span className="badge bg-dark mx-2 text-white">10</span>
+                <span className="badge bg-dark mx-2 text-white">
+                  {getListTasksCount(list.tasks)}
+                </span>
                 <ImCross
                   style={{ fontSize: "10px" }}
                   className="task-action-icon"
