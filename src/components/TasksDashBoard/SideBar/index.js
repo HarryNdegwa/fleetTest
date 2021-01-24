@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./style.css";
 import { FaChevronRight } from "react-icons/fa";
+import { persistListWrapper } from "../../../redux/actions/listActions";
 
 function Sidebar(props) {
   const { lists } = props;
@@ -10,6 +11,18 @@ function Sidebar(props) {
       return true;
     }
     return false;
+  };
+
+  const getListTasksCount = (tasks) => {
+    let count = 0;
+    for (let i = 0; i < tasks.length; i++) {
+      count += tasks[i].length;
+    }
+    return count;
+  };
+
+  const handleListClick = (e, id) => {
+    props.persistListWrapper(id);
   };
 
   return (
@@ -24,6 +37,7 @@ function Sidebar(props) {
                 className={`${
                   checkIfActive(list) ? "active-background" : null
                 }`}
+                onClick={(e) => handleListClick(e, list.id)}
               >
                 <h6 className="sidebar-list-title">
                   {list.listName}
@@ -37,7 +51,7 @@ function Sidebar(props) {
                         className="badge"
                         style={{ backgroundColor: "#333333" }}
                       >
-                        10
+                        {getListTasksCount(list.tasks)}
                       </span>
                     )}
                   </span>
@@ -57,4 +71,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps)(Sidebar);
+export default connect(mapStateToProps, { persistListWrapper })(Sidebar);
