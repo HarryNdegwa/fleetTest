@@ -7,7 +7,7 @@ const joinTaskArrays = (tasks) => {
   return [...tasks[0], ...tasks[1]];
 };
 
-export const setUpTasksArray = (data, id) => {
+export const setUpTasksArray = (data) => {
   if (data) {
     return (dispatch, getState) => {
       const task = getState().listReducer.persistedList;

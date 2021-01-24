@@ -8,12 +8,15 @@ import MainHeader from "../MainHeader";
 import { connect } from "react-redux";
 import { logout } from "../../redux/actions/loginActions";
 import { history } from "../../index";
-import { persistListWrapper } from "../../redux/actions/listActions";
+import {
+  persistListWrapper,
+  deleteListWrapper,
+} from "../../redux/actions/listActions";
 
 function SavedLists(props) {
   const handleListClick = (e, id) => {
     // persist list id
-    persistListWrapper(id);
+    props.persistListWrapper(id);
     history.push("/tasks-dashboard");
   };
 
@@ -30,7 +33,9 @@ function SavedLists(props) {
     return count;
   };
 
-  const handleDeleteList = (e, id) => {};
+  const handleDeleteList = (e, id) => {
+    props.deleteListWrapper(id);
+  };
 
   const { lists } = props;
   console.log(lists);
@@ -84,7 +89,7 @@ function SavedLists(props) {
                   {getListTasksCount(list.tasks)}
                 </span>
                 <ImCross
-                  style={{ fontSize: "10px" }}
+                  style={{ fontSize: "10px", cursor: "pointer" }}
                   className="task-action-icon"
                   onClick={(e) => handleDeleteList(e, list.id)}
                 />
@@ -102,6 +107,8 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { logout, persistListWrapper })(
-  SavedLists
-);
+export default connect(mapStateToProps, {
+  logout,
+  persistListWrapper,
+  deleteListWrapper,
+})(SavedLists);

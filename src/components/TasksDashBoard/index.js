@@ -15,7 +15,7 @@ function TaskDashBoard(props) {
   const { persistedList, lists, setUpTasksArray } = props;
   useEffect(() => {
     // setup tasks array of the persistedList
-    setUpTasksArray(lists, persistedList);
+    setUpTasksArray(lists);
   }, [persistedList, lists, setUpTasksArray]);
 
   if (!lists || lists.length === 0) {

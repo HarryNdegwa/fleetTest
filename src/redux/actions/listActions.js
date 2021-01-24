@@ -40,13 +40,25 @@ export const persistListWrapper = (id) => {
     for (let i = 0; i < lists.length; i++) {
       if (lists[i].id === id) {
         list = lists[i];
-        return;
       }
     }
     dispatch({
       type: t.PERSIST_LIST,
       data: list,
     });
-    // history.push("/tasks-dashboard");
+  };
+};
+
+export const deleteListWrapper = (id) => {
+  return (dispatch, getState) => {
+    const lists = getState().listReducer.lists.map((list, idx) => {
+      if (list.id !== id) {
+        return list;
+      }
+    });
+    dispatch({
+      type: t.DELETE_LIST,
+      data: lists,
+    });
   };
 };

@@ -41,6 +41,8 @@ export const listReducer = (state = initialState, action) => {
       };
     case t.PERSIST_LIST:
       return { ...state, persistedList: action.data };
+    case t.DELETE_LIST:
+      return { ...state, lists: action.data };
     default:
       return state;
   }
