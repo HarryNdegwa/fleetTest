@@ -71,7 +71,7 @@ function SavedLists(props) {
               <span key={idx} className="saved-list">
                 <h6
                   style={{ display: "inline-block", cursor: "pointer" }}
-                  onClick={(e) => handleListClick(e, idx)}
+                  onClick={(e) => handleListClick(e, list.id)}
                 >
                   {list.listName}
                 </h6>
