@@ -1,6 +1,6 @@
 import * as t from "./actionsType";
 
-import { updatePersistedList } from "../actions/listActions";
+import { updatePersistedList, updateLists } from "../actions/listActions";
 import { checkCurrent } from "./listActions";
 
 const joinTaskArrays = (tasks) => {
@@ -35,15 +35,11 @@ export const deleteTask = (data) => {
       return task.id !== data.id;
     });
     currentList.tasks[containerId] = newTaskContainer;
+    data.deleted = true;
     currentList.tasks[3].push(data);
-    // const s = tasks.filter((task, _idx) => {
-    //   return task !== data;
-    // });
-    // dispatch({
-    //   type: t.DELETE_TASK,
-    //   data: s,
-    // });
-    // dispatch(updatePersistedList(s, data));
+
+    dispatch(updatePersistedList(currentList));
+    dispatch(updateLists(currentList));
   };
 };
 

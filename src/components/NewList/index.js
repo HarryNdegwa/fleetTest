@@ -34,6 +34,7 @@ function NewList(props) {
       };
       const list = {
         listName: `My to-do list ${processDate()}`,
+        id: uuidv1(),
         tasks: [[], [t], [], []],
       };
 

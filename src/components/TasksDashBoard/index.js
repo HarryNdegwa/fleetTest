@@ -4,7 +4,7 @@ import Tasks from "../Tasks";
 import "./style.css";
 import Hamburger from "../MainHeader/Hamburger";
 import { ImCopy } from "react-icons/im";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { FaUser } from "react-icons/fa";
 import { AiOutlineBars } from "react-icons/ai";
 import { ImPlus } from "react-icons/im";
@@ -17,6 +17,10 @@ function TaskDashBoard(props) {
     // setup tasks array of the persistedList
     setUpTasksArray(lists, persistedList);
   }, [persistedList, lists, setUpTasksArray]);
+
+  if (lists.length === 0) {
+    return <Redirect to="/new-list" />;
+  }
 
   return (
     <div className="task-dashboard">

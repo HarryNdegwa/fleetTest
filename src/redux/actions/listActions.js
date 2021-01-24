@@ -25,3 +25,9 @@ export const updatePersistedList = (data) => {
     data: data,
   };
 };
+export const updateLists = (data) => {
+  return {
+    type: t.UPDATE_LISTS,
+    data: data,
+  };
+};

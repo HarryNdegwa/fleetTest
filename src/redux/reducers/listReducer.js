@@ -28,6 +28,17 @@ export const listReducer = (state = initialState, action) => {
         ...state,
         persistedList: action.data,
       };
+    case t.UPDATE_LISTS:
+      return {
+        ...state,
+        lists: state.lists.map((list, idx) => {
+          const listId = action.data.id;
+          if (list.id === listId) {
+            return action.data;
+          }
+          return list;
+        }),
+      };
     default:
       return state;
   }
