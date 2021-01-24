@@ -91,21 +91,24 @@ function Task(props) {
               ) : (
                 <AiFillStar
                   style={{ fontSize: "25px" }}
-                  className="task-action-icon"
+                  className="task-action-icon star-icon"
                   onClick={(e) => handleTaskStar(e, data)}
+                  title="Star task"
                 />
               )}
               <BsTagFill
                 style={{ fontSize: "22px" }}
-                className="task-action-icon"
+                className="task-action-icon color-icon"
+                title="Tag task with color"
               />
             </React.Fragment>
           )}
 
           <ImCross
-            style={{ fontSize: "20px" }}
-            className="task-action-icon"
+            style={{ fontSize: "16px" }}
+            className="task-action-icon delete-icon"
             onClick={(e) => handleDeleteTask(e, data)}
+            title="Delete Task"
           />
         </div>
       </div>

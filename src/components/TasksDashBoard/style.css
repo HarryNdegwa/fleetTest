@@ -52,6 +52,15 @@
   text-decoration: none;
 }
 
+.dashboard-secondary-header .btn {
+  border: 1px solid #413b4f;
+}
+
+.dashboard-secondary-header .btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 @media screen and (max-width: 576px) {
   .dashboard-top-header-wrapper {
     display: none;
@@ -77,16 +86,5 @@
     display: none;
     font-size: 30px;
     color: #fff !important;
-  }
-
-  .clone-btn {
-    color: #fff !important;
-    border: 1px solid black !important;
-  }
-
-  .clone-btn:focus {
-    outline: none;
-    box-shadow: none;
-    border: 1px solid black;
   }
 }

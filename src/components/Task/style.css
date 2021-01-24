@@ -64,6 +64,18 @@
   color: #d4d4d4;
 }
 
+.star-icon:hover {
+  color: orange;
+}
+
+.color-icon:hover {
+  color: #903fb4;
+}
+
+.delete-icon {
+  color: red;
+}
+
 @media screen and (max-width: 992px) {
   .task-actions-wrapper {
     flex: 2;

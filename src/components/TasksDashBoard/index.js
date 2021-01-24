@@ -59,10 +59,10 @@ function TaskDashBoard(props) {
               <div className="col-6 db-secondary-header-title">
                 <h5>My to-do list 01/20/2021</h5>
               </div>
-              <div className="col-6">
-                <button className="btn btn-md clone-btn">
+              <div className="col-6 text-right">
+                <button className="btn btn-md">
                   <ImCopy style={{ fontSize: "20px", color: "#fff" }} />{" "}
-                  <span className="ml-2 y">Clone This List</span>
+                  <span className="ml-2 y text-light">Clone This List</span>
                 </button>
               </div>
             </div>
