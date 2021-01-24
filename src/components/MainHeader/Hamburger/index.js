@@ -1,10 +1,13 @@
 import React from "react";
 import HamburgerMenu from "react-hamburger-menu";
-
+import { connect } from "react-redux";
+import { toggleMenu } from "../../../redux/actions/loginActions";
 import "./style.css";
 
 function Hamburger(props) {
-  const handleClick = (e) => {};
+  const handleClick = (e) => {
+    props.toggleMenu();
+  };
   return (
     <div className="sm-hamburger">
       <HamburgerMenu
@@ -18,5 +21,10 @@ function Hamburger(props) {
     </div>
   );
 }
+const mapStateToProps = (state) => {
+  return {
+    menuOpen: state.loginReducer.menuOpen,
+  };
+};
 
 export default Hamburger;

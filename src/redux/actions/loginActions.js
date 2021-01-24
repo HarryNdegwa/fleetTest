@@ -53,6 +53,12 @@ export const persistAuthData = (data) => {
   };
 };
 
+export const toggleMenu = () => {
+  return {
+    type: t.TOGGLE_MENU,
+  };
+};
+
 export const loginThunkAction = (data) => {
   return (dispatch) => {
     dispatch(loginStart());

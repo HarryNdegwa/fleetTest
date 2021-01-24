@@ -7,7 +7,8 @@ const initialState = {
   registerError: "",
   isAuth: false,
   token: "",
-  e: null,
+  authData: null,
+  menuOpen: false,
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -38,6 +39,8 @@ export const loginReducer = (state = initialState, action) => {
       return { ...state, registerLoading: false, registerError: action.data };
     case t.PERSIST_AUTH_DATA:
       return { ...state, authData: action.data };
+    case t.TOGGLE_MENU:
+      return { ...state, menuOpen: !state.menuOpen };
     default:
       return state;
   }
