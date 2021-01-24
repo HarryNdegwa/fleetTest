@@ -61,8 +61,9 @@ function Task(props) {
       <div className="task-info">
         {data.checked ? (
           <ImCheckboxChecked
-            style={{ fontSize: "30px", color: "orange" }}
+            style={{ fontSize: "30px" }}
             onClick={(e) => handleTaskUnCheck(e, data)}
+            className={`${data.checked ? "checked-icon" : null}`}
           />
         ) : (
           <ImCheckboxChecked
@@ -71,7 +72,7 @@ function Task(props) {
           />
         )}
         <div className="task-inner-info">
-          <h6 className="mx-3">
+          <h6 className={`mx-3 ${data.checked ? "checked-text" : null}`}>
             {data.title}
             <small className="task-date ml-2">
               {data.dueDate ? data.dueDate : "No due date"}
