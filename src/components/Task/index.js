@@ -34,13 +34,21 @@ function Task(props) {
     setShowActions(!showActions);
   };
 
+  const handleTaskUnCheck = (e, data) => {
+    props.checkTask(data);
+    setShowActions(!showActions);
+  };
+
   const { data } = props;
   // console.log(data);
   return (
     <div className="task">
       <div className="task-info">
         {data.checked ? (
-          <ImCheckboxChecked style={{ fontSize: "30px", color: "orange" }} />
+          <ImCheckboxChecked
+            style={{ fontSize: "30px", color: "orange" }}
+            onClick={(e) => handleTaskUnCheck(e, data)}
+          />
         ) : (
           <ImCheckboxChecked
             onClick={(e) => handleTaskCheck(e, data)}
