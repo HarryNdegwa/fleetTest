@@ -41,6 +41,16 @@ function Task(props) {
     props.unCheckTask(data);
   };
 
+  const handleTaskStar = (e, data) => {
+    props.starTask(data);
+    setShowActions(!showActions);
+  };
+
+  const handleTaskUnStar = (e, data) => {
+    props.unStarTask(data);
+    setShowActions(!showActions);
+  };
+
   const { data } = props;
   // console.log(data);
   return (
@@ -72,12 +82,13 @@ function Task(props) {
             <AiFillStar
               style={{ fontSize: "25px", color: "orange" }}
               className="task-action-icon"
+              onClick={(e) => handleTaskUnStar(e, data)}
             />
           ) : (
             <AiFillStar
               style={{ fontSize: "25px" }}
               className="task-action-icon"
-              onClick={(e) => handleTaskCheck(e, data)}
+              onClick={(e) => handleTaskStar(e, data)}
             />
           )}
           <BsTagFill
@@ -107,6 +118,7 @@ function Task(props) {
               <AiFillStar
                 style={{ fontSize: "20px", color: "orange" }}
                 className="task-action-icon"
+                onClick={(e) => handleTaskUnStar(e, data)}
               />
             ) : (
               <AiFillStar

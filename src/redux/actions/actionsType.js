@@ -5,7 +5,6 @@ export const SAVE_LIST = "SAVE_LIST";
 export const SETUP_TASKS_ARRAY = "SETUP_TASKS_ARRAY";
 export const DELETE_TASK = "DELETE_TASK";
 export const ADD_TASK = "ADD_TASK";
-export const CHECK_TASK = "CHECK_TASK";
 export const UPDATE_PERSISTED_LIST = "UPDATE_PERSISTED_LIST";
 export const UPDATE_LISTS = "UPDATE_LISTS";
 export const PERSIST_LIST = "PERSIST_LIST";
