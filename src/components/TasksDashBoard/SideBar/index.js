@@ -19,7 +19,12 @@ function Sidebar(props) {
         {lists &&
           lists.map((list, idx) => {
             return (
-              <li key={idx}>
+              <li
+                key={idx}
+                className={`${
+                  checkIfActive(list) ? "active-background" : null
+                }`}
+              >
                 <h6 className="sidebar-list-title">
                   {list.listName}
                   <span>
