@@ -8,7 +8,6 @@ import { v1 as uuidv1 } from "uuid";
 function Tasks(props) {
   const [task, setTask] = useState("");
   useEffect(() => {}, [props.tasks]);
-  const { tasks } = props;
 
   const handleChange = (e) => {
     setTask(e.target.value);
@@ -37,6 +36,8 @@ function Tasks(props) {
     }
   };
 
+  const { tasks, persistedList } = props;
+
   return (
     <div className="tasks">
       <input
@@ -50,6 +51,16 @@ function Tasks(props) {
         tasks.map((task, idx) => {
           return <Task key={idx} data={task} id={idx} />;
         })}
+
+      <div>
+        {persistedList && persistedList.tasks[2] ? (
+          <React.Fragment>
+            {persistedList.tasks[2].map((task, idx) => {
+              return <Task key={idx} data={task} id={idx} />;
+            })}
+          </React.Fragment>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -57,6 +68,7 @@ function Tasks(props) {
 const mapStateToProps = (state) => {
   return {
     tasks: state.taskReducer.tasks,
+    persistedList: state.listReducer.persistedList,
   };
 };
 

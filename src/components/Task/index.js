@@ -9,7 +9,7 @@ import {
 } from "react-icons/bs";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
-import { deleteTask } from "../../redux/actions/taskActions";
+import { checkTask, deleteTask } from "../../redux/actions/taskActions";
 
 function Task(props) {
   const [showActions, setShowActions] = useState(false);
@@ -29,6 +29,11 @@ function Task(props) {
     }
   };
 
+  const handleTaskCheck = (e, data) => {
+    props.checkTask(data);
+    setShowActions(!showActions);
+  };
+
   const { data } = props;
   // console.log(data);
   return (
@@ -46,10 +51,18 @@ function Task(props) {
       </div>
       <div className="task-actions-wrapper">
         <div className="task-actions">
-          <AiFillStar
-            style={{ fontSize: "25px" }}
-            className="task-action-icon"
-          />
+          {data.checked ? (
+            <AiFillStar
+              style={{ fontSize: "25px", color: "orange" }}
+              className="task-action-icon"
+            />
+          ) : (
+            <AiFillStar
+              style={{ fontSize: "25px" }}
+              className="task-action-icon"
+              onClick={(e) => handleTaskCheck(e, data)}
+            />
+          )}
           <BsTagFill
             style={{ fontSize: "22px" }}
             className="task-action-icon"
@@ -73,10 +86,19 @@ function Task(props) {
             />
           </div>
           <div className="task-sm-actions">
-            <AiFillStar
-              style={{ fontSize: "20px" }}
-              className="task-action-icon"
-            />
+            {data.checked ? (
+              <AiFillStar
+                style={{ fontSize: "20px", color: "orange" }}
+                className="task-action-icon"
+              />
+            ) : (
+              <AiFillStar
+                style={{ fontSize: "20px" }}
+                className="task-action-icon"
+                onClick={(e) => handleTaskCheck(e, data)}
+              />
+            )}
+
             <BsTagFill
               style={{ fontSize: "17px" }}
               className="task-action-icon"
@@ -99,4 +121,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { deleteTask })(Task);
+export default connect(mapStateToProps, { checkTask, deleteTask })(Task);

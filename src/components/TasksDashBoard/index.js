@@ -18,7 +18,7 @@ function TaskDashBoard(props) {
     setUpTasksArray(lists, persistedList);
   }, [persistedList, lists, setUpTasksArray]);
 
-  if (lists.length === 0) {
+  if (!lists || lists.length === 0) {
     return <Redirect to="/new-list" />;
   }
 
