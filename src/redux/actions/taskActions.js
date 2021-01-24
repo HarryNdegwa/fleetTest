@@ -101,7 +101,7 @@ export const starTask = (data) => {
     const newTaskContainer = taskContainer.filter((task) => {
       return task.id !== data.id;
     });
-    print(newTaskContainer);
+    data.starred = true;
     data.current = "Starred";
     currentList.tasks[0].unshift(data);
     currentList.tasks[containerId] = newTaskContainer;
@@ -119,15 +119,9 @@ export const unStarTask = (data) => {
     const newTaskContainer = taskContainer.filter((task) => {
       return task.id !== data.id;
     });
-    data.checked = false;
-    const wasStarred = data.starred;
-    if (wasStarred) {
-      currentList.tasks[0].unshift(data);
-      data.current = "Starred";
-    } else {
-      currentList.tasks[1].unshift(data);
-      data.current = "UnStarred";
-    }
+    data.starred = false;
+    data.current = "UnStarred";
+    currentList.tasks[1].unshift(data);
     currentList.tasks[containerId] = newTaskContainer;
 
     dispatch(updatePersistedList(currentList));

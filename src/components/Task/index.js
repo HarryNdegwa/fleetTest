@@ -12,6 +12,8 @@ import { connect } from "react-redux";
 import {
   checkTask,
   unCheckTask,
+  starTask,
+  unStarTask,
   deleteTask,
 } from "../../redux/actions/taskActions";
 
@@ -124,7 +126,7 @@ function Task(props) {
               <AiFillStar
                 style={{ fontSize: "20px" }}
                 className="task-action-icon"
-                onClick={(e) => handleTaskCheck(e, data)}
+                onClick={(e) => handleTaskStar(e, data)}
               />
             )}
 
@@ -150,6 +152,10 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { checkTask, unCheckTask, deleteTask })(
-  Task
-);
+export default connect(mapStateToProps, {
+  checkTask,
+  unCheckTask,
+  starTask,
+  unStarTask,
+  deleteTask,
+})(Task);
