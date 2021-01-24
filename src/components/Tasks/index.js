@@ -13,6 +13,15 @@ function Tasks(props) {
     setTask(e.target.value);
   };
 
+  const checkAllTasksChecked = (tasks, list) => {
+    if (tasks && list) {
+      if (tasks.length === list.tasks[2].length) {
+        return true;
+      }
+      return false;
+    }
+  };
+
   const handleKeyPress = (e) => {
     if (task.length === 0) {
       return;
@@ -51,6 +60,10 @@ function Tasks(props) {
         tasks.map((task, idx) => {
           return <Task key={idx} data={task} id={idx} />;
         })}
+
+      {checkAllTasksChecked(tasks, persistedList) ? (
+        <h3>You are all done!</h3>
+      ) : null}
 
       <div>
         {persistedList && persistedList.tasks[2] ? (
