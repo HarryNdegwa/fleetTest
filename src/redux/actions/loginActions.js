@@ -27,6 +27,13 @@ export const logout = () => {
   };
 };
 
+export const persistAuthData = (data) => {
+  return {
+    type: t.PERSIST_AUTH_DATA,
+    data: data,
+  };
+};
+
 export const loginThunkAction = (data) => {
   return (dispatch) => {
     dispatch(loginStart());

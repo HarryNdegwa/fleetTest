@@ -5,6 +5,7 @@ const initialState = {
   loginError: "",
   isAuth: false,
   token: "",
+  authData: null,
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -22,6 +23,8 @@ export const loginReducer = (state = initialState, action) => {
       return { ...state, loginLoading: false, loginError: action.data };
     case t.LOGOUT:
       return { ...state, isAuth: false };
+    case t.PERSIST_LIST:
+      return { ...state, authData: action.data };
     default:
       return state;
   }

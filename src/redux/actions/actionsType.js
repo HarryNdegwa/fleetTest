@@ -10,4 +10,5 @@ export const UPDATE_LISTS = "UPDATE_LISTS";
 export const PERSIST_LIST = "PERSIST_LIST";
 export const DELETE_LIST = "DELETE_LIST";
 export const ADD_CLONED_LIST = "ADD_CLONED_LIST";
+export const PERSIST_AUTH_DATA = "PERSIST_AUTH_DATA";
 export const LOGOUT = "LOGOUT";
