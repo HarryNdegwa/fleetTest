@@ -69,6 +69,7 @@ function Task(props) {
           <ImCheckboxChecked
             onClick={(e) => handleTaskCheck(e, data)}
             style={{ fontSize: "30px" }}
+            className="unchecked"
           />
         )}
         <div className="task-inner-info">

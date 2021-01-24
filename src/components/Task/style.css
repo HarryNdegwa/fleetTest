@@ -94,6 +94,17 @@
   color: #d4d4d4;
 }
 
+.unchecked {
+  background-color: #fff;
+  color: #fff;
+  border: 1px solid green;
+  border-radius: 6px;
+}
+
+.unchecked:hover {
+  color: green;
+}
+
 @media screen and (max-width: 992px) {
   .task-actions-wrapper {
     flex: 2;
