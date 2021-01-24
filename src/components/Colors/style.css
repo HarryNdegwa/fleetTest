@@ -1,0 +1,13 @@
+.colors {
+  visibility: hidden;
+  width: 120px;
+  background-color: blue;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1000;
+  height: 40px;
+  top: -5px;
+  right: 105%;
+}

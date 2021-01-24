@@ -72,6 +72,15 @@
   color: #903fb4;
 }
 
+.colors-tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.colors-tooltip:hover .colors {
+  visibility: visible;
+}
+
 .delete-icon:hover {
   color: red;
 }

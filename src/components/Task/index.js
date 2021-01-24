@@ -16,6 +16,7 @@ import {
   unStarTask,
   deleteTask,
 } from "../../redux/actions/taskActions";
+import Colors from "../Colors";
 
 function Task(props) {
   const [showActions, setShowActions] = useState(false);
@@ -98,11 +99,14 @@ function Task(props) {
                   title="Star task"
                 />
               )}
-              <BsTagFill
-                style={{ fontSize: "22px" }}
-                className="task-action-icon color-icon"
-                title="Tag task with color"
-              />
+              <span className="colors-tooltip">
+                <BsTagFill
+                  style={{ fontSize: "22px" }}
+                  className="task-action-icon color-icon"
+                  title="Tag task with color"
+                />
+                <Colors />
+              </span>
             </React.Fragment>
           )}
 
@@ -142,10 +146,13 @@ function Task(props) {
                     onClick={(e) => handleTaskStar(e, data)}
                   />
                 )}
-                <BsTagFill
-                  style={{ fontSize: "17px" }}
-                  className="task-action-icon"
-                />
+                <span className="colors-tooltip">
+                  <BsTagFill
+                    style={{ fontSize: "17px" }}
+                    className="task-action-icon"
+                  />
+                  <Colors />
+                </span>
               </React.Fragment>
             )}
 
