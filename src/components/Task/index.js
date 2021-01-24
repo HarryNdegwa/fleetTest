@@ -80,23 +80,28 @@ function Task(props) {
       </div>
       <div className="task-actions-wrapper">
         <div className="task-actions">
-          {data.starred ? (
-            <AiFillStar
-              style={{ fontSize: "25px", color: "orange" }}
-              className="task-action-icon"
-              onClick={(e) => handleTaskUnStar(e, data)}
-            />
-          ) : (
-            <AiFillStar
-              style={{ fontSize: "25px" }}
-              className="task-action-icon"
-              onClick={(e) => handleTaskStar(e, data)}
-            />
+          {data.checked ? null : (
+            <React.Fragment>
+              {data.starred ? (
+                <AiFillStar
+                  style={{ fontSize: "25px", color: "orange" }}
+                  className="task-action-icon"
+                  onClick={(e) => handleTaskUnStar(e, data)}
+                />
+              ) : (
+                <AiFillStar
+                  style={{ fontSize: "25px" }}
+                  className="task-action-icon"
+                  onClick={(e) => handleTaskStar(e, data)}
+                />
+              )}
+              <BsTagFill
+                style={{ fontSize: "22px" }}
+                className="task-action-icon"
+              />
+            </React.Fragment>
           )}
-          <BsTagFill
-            style={{ fontSize: "22px" }}
-            className="task-action-icon"
-          />
+
           <ImCross
             style={{ fontSize: "20px" }}
             className="task-action-icon"
@@ -116,24 +121,29 @@ function Task(props) {
             />
           </div>
           <div className="task-sm-actions">
-            {data.starred ? (
-              <AiFillStar
-                style={{ fontSize: "20px", color: "orange" }}
-                className="task-action-icon"
-                onClick={(e) => handleTaskUnStar(e, data)}
-              />
-            ) : (
-              <AiFillStar
-                style={{ fontSize: "20px" }}
-                className="task-action-icon"
-                onClick={(e) => handleTaskStar(e, data)}
-              />
+            {data.checked ? null : (
+              <React.Fragment>
+                {" "}
+                {data.starred ? (
+                  <AiFillStar
+                    style={{ fontSize: "20px", color: "orange" }}
+                    className="task-action-icon"
+                    onClick={(e) => handleTaskUnStar(e, data)}
+                  />
+                ) : (
+                  <AiFillStar
+                    style={{ fontSize: "20px" }}
+                    className="task-action-icon"
+                    onClick={(e) => handleTaskStar(e, data)}
+                  />
+                )}
+                <BsTagFill
+                  style={{ fontSize: "17px" }}
+                  className="task-action-icon"
+                />
+              </React.Fragment>
             )}
 
-            <BsTagFill
-              style={{ fontSize: "17px" }}
-              className="task-action-icon"
-            />
             <ImCross
               style={{ fontSize: "15px" }}
               className="task-action-icon"
