@@ -10,6 +10,7 @@ import { AiOutlineBars } from "react-icons/ai";
 import { ImPlus } from "react-icons/im";
 import { connect } from "react-redux";
 import { setUpTasksArray } from "../../redux/actions/taskActions";
+import { cloneList } from "../../redux/actions/listActions";
 
 function TaskDashBoard(props) {
   const { persistedList, lists, setUpTasksArray } = props;
@@ -19,7 +20,8 @@ function TaskDashBoard(props) {
   }, [persistedList, lists, setUpTasksArray]);
 
   const handleCloneClick = () => {
-    // do something
+    // do
+    props.cloneList();
   };
 
   if (!lists || lists.length === 0) {
@@ -87,4 +89,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { setUpTasksArray })(TaskDashBoard);
+export default connect(mapStateToProps, { setUpTasksArray, cloneList })(
+  TaskDashBoard
+);

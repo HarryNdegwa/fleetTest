@@ -70,11 +70,10 @@ export const cloneList = () => {
     const newList = { ...toCloneList };
     newList.listName = "Duplicate " + toCloneList.listName;
     newList.id = uuidv1();
-    console.log(newList);
-    // dispatch({type:t.ADD_CLONED_LIST,data:newList})
-    // dispatch({
-    //   type: t.PERSIST_LIST,
-    //   data: newList,
-    // });
+    dispatch({ type: t.ADD_CLONED_LIST, data: newList });
+    dispatch({
+      type: t.PERSIST_LIST,
+      data: newList,
+    });
   };
 };
