@@ -52,7 +52,7 @@ function Tasks(props) {
           return <Task key={idx} data={task} id={idx} />;
         })}
 
-      <div className="mt-5 pt-5">
+      <div>
         {persistedList && persistedList.tasks[2] ? (
           <React.Fragment>
             {persistedList.tasks[2].map((task, idx) => {

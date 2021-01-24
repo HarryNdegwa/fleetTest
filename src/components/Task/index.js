@@ -25,7 +25,7 @@ function Task(props) {
 
   const handleDeleteTask = (e, data) => {
     // eslint-disable-next-line no-restricted-globals
-    const proceed = confirm("Delete this task?");
+    const proceed = confirm(`Are you sure you want to delete "${data.title}"?`);
     if (proceed) {
       // delete function
       props.deleteTask(data);
@@ -80,7 +80,9 @@ function Task(props) {
       </div>
       <div className="task-actions-wrapper">
         <div className="task-actions">
-          {data.checked ? null : (
+          {data.checked ? (
+            <div style={{ width: "100px" }}></div>
+          ) : (
             <React.Fragment>
               {data.starred ? (
                 <AiFillStar
