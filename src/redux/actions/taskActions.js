@@ -4,7 +4,7 @@ import { updatePersistedList, updateLists } from "../actions/listActions";
 import { checkCurrent } from "./listActions";
 
 const joinTaskArrays = (tasks) => {
-  return [...tasks[0], ...tasks[1], ...tasks[2], ...tasks[0]];
+  return [...tasks[0], ...tasks[1]];
 };
 
 export const setUpTasksArray = (data, id) => {
@@ -45,6 +45,23 @@ export const addTask = (payload) => {
   return (dispatch, getState) => {
     const currentList = getState().listReducer.persistedList;
     currentList.tasks[1].unshift(payload);
+
+    dispatch(updatePersistedList(currentList));
+    dispatch(updateLists(currentList));
+  };
+};
+
+export const checkTask = (data) => {
+  return (dispatch, getState) => {
+    const currentList = getState().listReducer.persistedList;
+    const containerId = checkCurrent(data);
+    const taskContainer = currentList.tasks[containerId];
+    const newTaskContainer = taskContainer.filter((task) => {
+      return task.id !== data.id;
+    });
+    data.checked = true;
+    currentList.tasks[2].unshift(data);
+    currentList.tasks[containerId] = newTaskContainer;
 
     dispatch(updatePersistedList(currentList));
     dispatch(updateLists(currentList));
