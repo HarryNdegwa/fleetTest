@@ -35,8 +35,6 @@ export const deleteTask = (data) => {
       return task.id !== data.id;
     });
     currentList.tasks[containerId] = newTaskContainer;
-    data.deleted = true;
-    currentList.tasks[3].push(data);
 
     dispatch(updatePersistedList(currentList));
     dispatch(updateLists(currentList));

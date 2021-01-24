@@ -20,6 +20,7 @@ function Tasks(props) {
     }
     if (e.key === "Enter") {
       // save list
+
       const t = {
         title: task,
         checked: false,
@@ -28,11 +29,11 @@ function Tasks(props) {
         dueDate: null,
         current: "unStarred",
         id: uuidv1(),
-        deleted: false,
       };
 
-      props.addTask(t);
       setTask("");
+
+      props.addTask(t);
     }
   };
 
