@@ -8,5 +8,13 @@
     height: 150px;
     background-color: black;
     position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: -10;
+  }
+
+  .sm-top-header-hide {
+    display: none;
   }
 }

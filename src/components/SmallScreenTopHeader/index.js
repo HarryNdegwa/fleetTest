@@ -1,9 +1,20 @@
 import React from "react";
-
+import { connect } from "react-redux";
 import "./style.css";
 
 function index(props) {
-  return <div className="sm-top-header"></div>;
+  const { menuOpen } = props;
+  return (
+    <div
+      className={`${menuOpen ? "sm-top-header" : "sm-top-header-hide"}`}
+    ></div>
+  );
 }
 
-export default index;
+const mapStateToProps = (state) => {
+  return {
+    menuOpen: state.loginReducer.menuOpen,
+  };
+};
+
+export default connect(mapStateToProps)(index);

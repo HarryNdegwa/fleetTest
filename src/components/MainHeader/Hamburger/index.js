@@ -21,10 +21,5 @@ function Hamburger(props) {
     </div>
   );
 }
-const mapStateToProps = (state) => {
-  return {
-    menuOpen: state.loginReducer.menuOpen,
-  };
-};
 
-export default Hamburger;
+export default connect(null, { toggleMenu })(Hamburger);
