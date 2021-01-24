@@ -39,7 +39,14 @@ function Task(props) {
   return (
     <div className="task">
       <div className="task-info">
-        <ImCheckboxChecked style={{ fontSize: "30px" }} />
+        {data.checked ? (
+          <ImCheckboxChecked style={{ fontSize: "30px", color: "orange" }} />
+        ) : (
+          <ImCheckboxChecked
+            onClick={(e) => handleTaskCheck(e, data)}
+            style={{ fontSize: "30px" }}
+          />
+        )}
         <div className="task-inner-info">
           <h6 className="mx-3">
             {data.title}
@@ -51,7 +58,7 @@ function Task(props) {
       </div>
       <div className="task-actions-wrapper">
         <div className="task-actions">
-          {data.checked ? (
+          {data.starred ? (
             <AiFillStar
               style={{ fontSize: "25px", color: "orange" }}
               className="task-action-icon"
@@ -86,7 +93,7 @@ function Task(props) {
             />
           </div>
           <div className="task-sm-actions">
-            {data.checked ? (
+            {data.starred ? (
               <AiFillStar
                 style={{ fontSize: "20px", color: "orange" }}
                 className="task-action-icon"
