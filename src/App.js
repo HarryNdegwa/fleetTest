@@ -5,6 +5,7 @@ import TasksDashBoard from "./components/TasksDashBoard";
 import SavedLists from "./components/SavedLists";
 import NewList from "./components/NewList";
 import { connect } from "react-redux";
+import Register from "./components/Register";
 
 function App(props) {
   const { isAuth } = props;
@@ -12,6 +13,7 @@ function App(props) {
     <div className="App">
       <Switch>
         <Route path="/login" component={Login} />
+        <Route path="/register" component={Register} />
         <Route path="/tasks-dashboard" component={TasksDashBoard} />
         <Route path="/saved-lists" component={SavedLists} />
         <Route path="/new-list" component={NewList} />

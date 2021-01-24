@@ -2,14 +2,20 @@ import React from "react";
 import TopHeader from "../TopHeader";
 import MainHeader from "../MainHeader";
 import SmallScreenTopHeader from "../SmallScreenTopHeader";
+import { connect } from "react-redux";
+import { Formik, Form, Field } from "formik";
+import { Redirect, Link } from "react-router-dom";
+import * as Yup from "yup";
+import "./style.css";
 
 const registerSchema = Yup.object().shape({
-  name: Yup.string().email().required("Required!"),
+  name: Yup.string().required("Required!"),
   email: Yup.string().email().required("Required!"),
   password: Yup.string().required("Required!"),
 });
 
 function Register(props) {
+  const { registerLoading } = props;
   return (
     <div className="register">
       <TopHeader />
@@ -39,7 +45,12 @@ function Register(props) {
               }}
             >
               {({ errors, touched }) => (
-                <Form className="form-group login-form">
+                <Form className="form-group register-form">
+                  <label htmlFor="name">Name</label>
+                  <Field name="name" type="name" className="form-control" />
+                  {errors.name && touched.name ? (
+                    <p className="form-error">{errors.name}</p>
+                  ) : null}
                   <label htmlFor="email">Email</label>
                   <Field name="email" type="email" className="form-control" />
                   {errors.email && touched.email ? (
@@ -58,7 +69,7 @@ function Register(props) {
                   ) : null}
 
                   <button
-                    disabled={loginLoading}
+                    disabled={registerLoading}
                     className="my-3 btn btn-lg register-btn"
                     type="submit"
                   >
@@ -67,6 +78,7 @@ function Register(props) {
                 </Form>
               )}
             </Formik>
+            <Link to="login">Log in</Link>
           </div>
           <div className="col-lg-6"></div>
         </div>
@@ -75,4 +87,10 @@ function Register(props) {
   );
 }
 
-export default Register;
+const mapStateToProps = (state) => {
+  return {
+    loginLoading: state.loginReducer.loginLoading,
+  };
+};
+
+export default connect(mapStateToProps)(Register);

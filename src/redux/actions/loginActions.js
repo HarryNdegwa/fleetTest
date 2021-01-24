@@ -21,6 +21,25 @@ const loginError = (error) => {
   };
 };
 
+const registerError = (error) => {
+  return {
+    type: t.REGISTER_ERROR,
+    data: error,
+  };
+};
+const registerStart = () => {
+  return {
+    type: t.REGISTER_LOADING,
+  };
+};
+
+const registerSuccess = (data) => {
+  return {
+    type: t.REGISTER_SUCCESS,
+    data: data,
+  };
+};
+
 export const logout = () => {
   return {
     type: t.LOGOUT,
@@ -45,6 +64,20 @@ export const loginThunkAction = (data) => {
       })
       .catch((error) => {
         dispatch(loginError(error));
+      });
+  };
+};
+export const registerThunkAction = (data) => {
+  return (dispatch) => {
+    dispatch(registerStart());
+    axios
+      .post("https://reqres.in/api/register", data)
+      .then((res) => {
+        dispatch(registerSuccess(res.data.token));
+        dispatch(persistAuthData(data));
+      })
+      .catch((error) => {
+        dispatch(registerError(error));
       });
   };
 };
