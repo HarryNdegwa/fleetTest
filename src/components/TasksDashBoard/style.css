@@ -11,7 +11,7 @@
 }
 
 .dashboard-top-header {
-  background-color: black;
+  background-color: #333333;
   height: 40px;
   position: absolute;
   top: 0;
@@ -25,7 +25,7 @@
 }
 
 .dashboard-secondary-header {
-  background-color: purple;
+  background-color: #903fb4;
   height: 60px;
   width: 100%;
   color: #fff;
