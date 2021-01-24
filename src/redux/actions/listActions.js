@@ -25,9 +25,28 @@ export const updatePersistedList = (data) => {
     data: data,
   };
 };
+
 export const updateLists = (data) => {
   return {
     type: t.UPDATE_LISTS,
     data: data,
+  };
+};
+
+export const persistListWrapper = (id, history) => {
+  return (dispatch, getState) => {
+    let list = null;
+    const lists = getState().listReducer.lists;
+    for (let i = 0; i < lists.length; i++) {
+      if (lists[i].id === id) {
+        list = lists[i];
+        return;
+      }
+    }
+    dispatch({
+      type: t.PERSIST_LIST,
+      data: list,
+    });
+    history.push("/tasks-dashboard");
   };
 };
