@@ -15,9 +15,13 @@ const loginSchema = Yup.object().shape({
 });
 
 function Login(props) {
-  const { loginLoading, isAuth } = props;
+  const { loginLoading, isAuth, lists } = props;
   if (isAuth) {
-    return <Redirect to="/new-list" />;
+    if (lists.length > 0) {
+      return <Redirect to="/tasks-dashboard" />;
+    } else {
+      return <Redirect to="/new-list" />;
+    }
   }
   return (
     <div className="login">
@@ -88,6 +92,7 @@ const mapStateToProps = (state) => {
     loginLoading: state.loginReducer.loginLoading,
     isAuth: state.loginReducer.isAuth,
     loginError: state.loginReducer.loginError,
+    lists: state.listReducer.lists,
   };
 };
 

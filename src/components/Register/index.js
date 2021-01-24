@@ -7,6 +7,7 @@ import { Formik, Form, Field } from "formik";
 import { Redirect, Link } from "react-router-dom";
 import * as Yup from "yup";
 import "./style.css";
+import { registerThunkAction } from "../../redux/actions/loginActions";
 
 const registerSchema = Yup.object().shape({
   name: Yup.string().required("Required!"),
@@ -15,7 +16,14 @@ const registerSchema = Yup.object().shape({
 });
 
 function Register(props) {
-  const { registerLoading } = props;
+  const { registerLoading, isAuth, lists } = props;
+  if (isAuth) {
+    if (lists.length > 0) {
+      return <Redirect to="/tasks-dashboard" />;
+    } else {
+      return <Redirect to="/new-list" />;
+    }
+  }
   return (
     <div className="register">
       <TopHeader />
@@ -38,7 +46,7 @@ function Register(props) {
               }}
               validationSchema={registerSchema}
               onSubmit={(values) => {
-                props.ragisterThunkAction({
+                props.registerThunkAction({
                   email: "eve.holt@reqres.in",
                   password: "pistol",
                 });
@@ -89,8 +97,10 @@ function Register(props) {
 
 const mapStateToProps = (state) => {
   return {
-    loginLoading: state.loginReducer.loginLoading,
+    registerLoading: state.loginReducer.registerLoading,
+    isAuth: state.loginReducer.isAuth,
+    lists: state.listReducer.lists,
   };
 };
 
-export default connect(mapStateToProps)(Register);
+export default connect(mapStateToProps, { registerThunkAction })(Register);
