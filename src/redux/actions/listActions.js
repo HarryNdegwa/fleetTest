@@ -8,7 +8,7 @@ export const saveList = (data) => {
 
 export const checkCurrent = (data) => {
   switch (data.current) {
-    case "unStarred":
+    case "UnStarred":
       return 1;
     case "Starred":
       return 0;

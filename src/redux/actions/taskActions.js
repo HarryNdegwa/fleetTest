@@ -60,6 +60,7 @@ export const checkTask = (data) => {
       return task.id !== data.id;
     });
     data.checked = true;
+    data.current = "Checked";
     currentList.tasks[2].unshift(data);
     currentList.tasks[containerId] = newTaskContainer;
 
@@ -68,7 +69,7 @@ export const checkTask = (data) => {
   };
 };
 
-export const UnCheckTask = (data) => {
+export const unCheckTask = (data) => {
   return (dispatch, getState) => {
     const currentList = getState().listReducer.persistedList;
     const containerId = checkCurrent(data);
@@ -80,8 +81,10 @@ export const UnCheckTask = (data) => {
     const wasStarred = data.starred;
     if (wasStarred) {
       currentList.tasks[0].unshift(data);
+      data.current = "Starred";
     } else {
       currentList.tasks[1].unshift(data);
+      data.current = "UnStarred";
     }
     currentList.tasks[containerId] = newTaskContainer;
 

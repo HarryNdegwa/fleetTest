@@ -9,7 +9,11 @@ import {
 } from "react-icons/bs";
 import "react-datepicker/dist/react-datepicker.css";
 import { connect } from "react-redux";
-import { checkTask, deleteTask } from "../../redux/actions/taskActions";
+import {
+  checkTask,
+  unCheckTask,
+  deleteTask,
+} from "../../redux/actions/taskActions";
 
 function Task(props) {
   const [showActions, setShowActions] = useState(false);
@@ -31,12 +35,10 @@ function Task(props) {
 
   const handleTaskCheck = (e, data) => {
     props.checkTask(data);
-    setShowActions(!showActions);
   };
 
   const handleTaskUnCheck = (e, data) => {
-    props.checkTask(data);
-    setShowActions(!showActions);
+    props.unCheckTask(data);
   };
 
   const { data } = props;
@@ -136,4 +138,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { checkTask, deleteTask })(Task);
+export default connect(mapStateToProps, { checkTask, unCheckTask, deleteTask })(
+  Task
+);

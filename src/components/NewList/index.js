@@ -28,7 +28,7 @@ function NewList(props) {
         starred: false,
         color: "white",
         dueDate: null,
-        current: "unStarred",
+        current: "UnStarred",
         id: uuidv1(),
       };
       const list = {
