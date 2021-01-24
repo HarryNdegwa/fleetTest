@@ -23,11 +23,10 @@ function Login(props) {
       return <Redirect to="/new-list" />;
     }
   }
-  console.log(menuOpen);
   return (
     <React.Fragment>
-      <SmallScreenTopHeader />
-      <div className={`login ${menuOpen ? "showMenu" : null}`}>
+      {/* ${menuOpen ? "showMenu" : null} */}
+      <div className={`login`}>
         <TopHeader />
 
         <MainHeader />

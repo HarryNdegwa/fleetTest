@@ -5,9 +5,11 @@ import "./style.css";
 function index(props) {
   const { menuOpen } = props;
   return (
-    <div
-      className={`${menuOpen ? "sm-top-header" : "sm-top-header-hide"}`}
-    ></div>
+    <div className={`${menuOpen ? "sm-top-header" : "sm-top-header-hide"}`}>
+      <p>mike@gmail.com</p>
+      <p>Manage Lists</p>
+      <p>New List</p>
+    </div>
   );
 }
 

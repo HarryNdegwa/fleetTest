@@ -5,13 +5,26 @@
 @media screen and (max-width: 576px) {
   .sm-top-header {
     display: block;
-    height: 150px;
+    height: 120px;
     background-color: black;
     position: absolute;
     top: 0px;
     left: 0px;
     width: 100%;
     z-index: -10;
+  }
+
+  .sm-top-header p {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    text-align: center;
+  }
+
+  .sm-top-header p a {
+    color: #fff !important;
   }
 
   .sm-top-header-hide {

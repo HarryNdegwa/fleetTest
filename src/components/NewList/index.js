@@ -53,45 +53,82 @@ function NewList(props) {
     return `${month}1/${day}/${year}`;
   };
 
-  return (
-    <div className="new-list">
-      <div className="create-list-top-header">
-        <Link to="/account" className="link mr-3">
-          <span className="mx-1">
-            <FaUser />
-          </span>
-          mike@gmail.com
-        </Link>
+  const { menuOpen } = props;
 
-        <Link to="/saved-lists" className="link mr-3">
-          <span className="mr-1">
-            <AiOutlineBars />
-          </span>
-          Manage Lists
-        </Link>
-        <Link to="/new-list" className="link mr-3">
-          <span className="mr-1">
-            <ImPlus />
-          </span>
-          New List
-        </Link>
+  return (
+    <React.Fragment>
+      <div className={`${menuOpen ? "sm-top-header" : "sm-top-header-hide"}`}>
+        <p>
+          <Link to="/account">
+            <span className="mx-1">
+              <FaUser />
+            </span>
+            mike@gmail.com
+          </Link>
+        </p>
+        <p>
+          <Link to="/saved-lists">
+            {" "}
+            <span className="mr-1">
+              <AiOutlineBars />
+            </span>
+            Manage Lists
+          </Link>
+        </p>
+        <p>
+          <Link to="/new-list">
+            <span className="mr-1">
+              <ImPlus />
+            </span>
+            New List
+          </Link>
+        </p>
       </div>
-      <MainHeader />
-      <div className="create-list-secondary-header">
-        <div className="container ">
-          <h2>Create your to-do list below</h2>
+      <div className={`new-list ${menuOpen ? "showMenu" : null}`}>
+        <div className="create-list-top-header">
+          <Link to="/account" className="link mr-3">
+            <span className="mx-1">
+              <FaUser />
+            </span>
+            mike@gmail.com
+          </Link>
+
+          <Link to="/saved-lists" className="link mr-3">
+            <span className="mr-1">
+              <AiOutlineBars />
+            </span>
+            Manage Lists
+          </Link>
+          <Link to="/new-list" className="link mr-3">
+            <span className="mr-1">
+              <ImPlus />
+            </span>
+            New List
+          </Link>
+        </div>
+        <MainHeader />
+        <div className="create-list-secondary-header">
+          <div className="container ">
+            <h2>Create your to-do list below</h2>
+          </div>
+        </div>
+        <div className="container">
+          <input
+            className="mt-3 new-list-input"
+            placeholder="Type here e.g. Buy Bacon"
+            onChange={handleInputChange}
+            onKeyPress={handleKeyPress}
+          />
         </div>
       </div>
-      <div className="container">
-        <input
-          className="mt-3 new-list-input"
-          placeholder="Type here e.g. Buy Bacon"
-          onChange={handleInputChange}
-          onKeyPress={handleKeyPress}
-        />
-      </div>
-    </div>
+    </React.Fragment>
   );
 }
 
-export default connect(null, { saveList })(NewList);
+const mapStateToProps = (state) => {
+  return {
+    menuOpen: state.loginReducer.menuOpen,
+  };
+};
+
+export default connect(mapStateToProps, { saveList })(NewList);
