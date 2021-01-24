@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import "./style.css";
 import Task from "../Task";
 import { addTask } from "../../redux/actions/taskActions";
-// import { v1 as uuidv1 } from "uuid";
+import { v1 as uuidv1 } from "uuid";
 
 function Tasks(props) {
   const [task, setTask] = useState("");
@@ -20,17 +20,18 @@ function Tasks(props) {
     }
     if (e.key === "Enter") {
       // save list
-      // const t = {
-      //   title: task,
-      //   checked: false,
-      //   starred: false,
-      //   color: "white",
-      //   dueDate: null,
-      //   current: "unStarred",
-      //   id: uuidv1(),
-      // };
+      const t = {
+        title: task,
+        checked: false,
+        starred: false,
+        color: "white",
+        dueDate: null,
+        current: "unStarred",
+        id: uuidv1(),
+        deleted: false,
+      };
 
-      // props.addTask(tasks, t);
+      props.addTask(t);
       setTask("");
     }
   };

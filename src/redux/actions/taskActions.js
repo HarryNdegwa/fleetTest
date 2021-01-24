@@ -43,14 +43,12 @@ export const deleteTask = (data) => {
   };
 };
 
-export const addTask = (data, payload) => {
+export const addTask = (payload) => {
   return (dispatch, getState) => {
-    const tasks = getState().taskReducer.tasks;
-    const tasks1 = [payload, ...data];
+    const currentList = getState().listReducer.persistedList;
+    currentList.tasks[1].unshift(payload);
 
-    dispatch({
-      type: t.ADD_TASK,
-      data: [tasks[0], tasks1, tasks[2]],
-    });
+    dispatch(updatePersistedList(currentList));
+    dispatch(updateLists(currentList));
   };
 };
