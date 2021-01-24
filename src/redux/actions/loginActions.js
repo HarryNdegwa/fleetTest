@@ -41,6 +41,7 @@ export const loginThunkAction = (data) => {
       .post("https://reqres.in/api/login", data)
       .then((res) => {
         dispatch(loginSuccess(res.data.token));
+        dispatch(persistAuthData(data));
       })
       .catch((error) => {
         dispatch(loginError(error));

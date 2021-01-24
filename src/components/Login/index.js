@@ -36,7 +36,10 @@ function Login(props) {
               }}
               validationSchema={loginSchema}
               onSubmit={(values) => {
-                props.loginThunkAction(values);
+                props.loginThunkAction({
+                  email: "eve.holt@reqres.in",
+                  password: "cityslicka",
+                });
               }}
             >
               {({ errors, touched }) => (
@@ -68,6 +71,7 @@ function Login(props) {
                 </Form>
               )}
             </Formik>
+            <Link to="/register">Sign up here</Link>
           </div>
           <div className="col-lg-6"></div>
         </div>
