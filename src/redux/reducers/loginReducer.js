@@ -3,11 +3,11 @@ import * as t from "../actions/actionsType";
 const initialState = {
   loginLoading: false,
   loginError: "",
-  loginLoading: false,
-  loginError: "",
+  registerLoading: false,
+  registerError: "",
   isAuth: false,
   token: "",
-  authData: null,
+  e: null,
 };
 
 export const loginReducer = (state = initialState, action) => {
@@ -36,9 +36,7 @@ export const loginReducer = (state = initialState, action) => {
       };
     case t.REGISTER_ERROR:
       return { ...state, registerLoading: false, registerError: action.data };
-    case t.LOGOUT:
-      return { ...state, isAuth: false };
-    case t.PERSIST_LIST:
+    case t.PERSIST_AUTH_DATA:
       return { ...state, authData: action.data };
     default:
       return state;

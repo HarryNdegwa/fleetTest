@@ -34,7 +34,7 @@ function Register(props) {
           <div className="col-lg-6">
             <h3 className="register-lead">Sign up to save lists</h3>
             <h6 className="my-3">
-              New to Flask.io?{" "}
+              New to git add .jsonFlask.io?{" "}
               <Link to="/register">Sign up here to save your lists.</Link>
             </h6>
 
