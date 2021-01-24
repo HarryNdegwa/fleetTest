@@ -19,9 +19,9 @@ export const checkCurrent = (data) => {
   }
 };
 
-export const updateListTasks = (data) => {
+export const updatePersistedList = (data) => {
   return {
-    type: t.UPDATE_LIST_TASKS,
-    data: { data: data, id: checkCurrent(data) },
+    type: t.UPDATE_PERSISTED_LIST,
+    data: data,
   };
 };

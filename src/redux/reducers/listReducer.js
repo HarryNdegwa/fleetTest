@@ -23,15 +23,10 @@ export const listReducer = (state = initialState, action) => {
         lists: checkLists(state.lists, action.data),
         persistedList: action.data,
       };
-    case t.UPDATE_LIST_TASKS:
+    case t.UPDATE_PERSISTED_LIST:
       return {
         ...state,
-        lists: state.lists.map((list, idx) => {
-          if (idx === state.persistedList) {
-            return (list.tasks[action.data.id] = action.data.data);
-          }
-          return list;
-        }),
+        persistedList: action.data,
       };
     default:
       return state;

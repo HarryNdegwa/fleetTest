@@ -1,6 +1,6 @@
 import * as t from "./actionsType";
 
-import { updateListTasks } from "../actions/listActions";
+import { updatePersistedList } from "../actions/listActions";
 import { checkCurrent } from "./listActions";
 
 const joinTaskArrays = (tasks) => {
@@ -43,7 +43,7 @@ export const deleteTask = (data) => {
     //   type: t.DELETE_TASK,
     //   data: s,
     // });
-    // dispatch(updateListPersistedList(s, data));
+    // dispatch(updatePersistedList(s, data));
   };
 };
 
