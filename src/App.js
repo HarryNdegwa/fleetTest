@@ -12,20 +12,23 @@ function App(props) {
     <div className="App">
       <Switch>
         <Route path="/login" component={Login} />
-        <Route
+        <Route path="/tasks-dashboard" component={TasksDashBoard} />
+        <Route path="/saved-lists" component={SavedLists} />
+        <Route path="/new-list" component={NewList} />
+        {/* <Route
           path="/tasks-dashboard"
           render={() =>
             isAuth ? <TasksDashBoard /> : <Redirect to="/login" />
           }
-        />
-        <Route
+        /> */}
+        {/* <Route
           path="/saved-lists"
           render={() => (isAuth ? <SavedLists /> : <Redirect to="/login" />)}
         />
         <Route
           path="/new-list"
           render={() => (isAuth ? <NewList /> : <Redirect to="/login" />)}
-        />
+        /> */}
       </Switch>
     </div>
   );

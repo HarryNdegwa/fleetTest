@@ -29,7 +29,7 @@ function SavedLists(props) {
           mike@gmail.com
         </Link>
 
-        <Link to="/saved-lits" className="link mr-3">
+        <Link to="/saved-lists" className="link mr-3">
           <span className="mr-1">
             <AiOutlineBars />
           </span>
