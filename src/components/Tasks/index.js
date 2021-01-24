@@ -13,14 +13,14 @@ function Tasks(props) {
     setTask(e.target.value);
   };
 
-  const checkAllTasksChecked = (tasks, list) => {
-    if (tasks && list) {
-      if (tasks.length === list.tasks[2].length) {
-        return true;
-      }
-      return false;
-    }
-  };
+  // const checkAllTasksChecked = (tasks, list) => {
+  //   if (tasks && list) {
+  //     if (tasks.length === list.tasks[2].length) {
+  //       return true;
+  //     }
+  //     return false;
+  //   }
+  // };
 
   const handleKeyPress = (e) => {
     if (task.length === 0) {
