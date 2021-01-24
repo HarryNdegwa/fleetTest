@@ -2,7 +2,7 @@ import * as t from "../actions/actionsType";
 
 const initialState = {
   lists: null,
-  persistedList: -1,
+  persistedList: null,
 };
 
 const checkLists = (lists, data) => {
@@ -21,7 +21,7 @@ export const listReducer = (state = initialState, action) => {
       return {
         ...state,
         lists: checkLists(state.lists, action.data),
-        persistedList: state.persistedList + 1,
+        persistedList: action.data,
       };
     case t.UPDATE_LIST_TASKS:
       return {

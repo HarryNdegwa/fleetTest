@@ -8,10 +8,11 @@ const joinTaskArrays = (tasks) => {
 
 export const setUpTasksArray = (data, id) => {
   if (data) {
-    return (dispatch) => {
+    return (dispatch, getState) => {
+      const task = getState().listReducer.persistedList;
       dispatch({
         type: t.SETUP_TASKS_ARRAY,
-        data: joinTaskArrays(data[id].tasks),
+        data: joinTaskArrays(task.tasks),
       });
     };
   } else {
