@@ -6,6 +6,21 @@
   background-color: #413b4f;
   width: 100%;
   color: #fff;
+  padding-left: 10px;
+}
+
+.sidebar li {
+  margin: 20px 0px;
+}
+
+.sidebar-list-title {
+  position: relative;
+  padding-right: 30px;
+}
+
+.sidebar-list-title > span {
+  position: absolute;
+  right: 10px;
 }
 
 @media screen and (max-width: 767px) {
