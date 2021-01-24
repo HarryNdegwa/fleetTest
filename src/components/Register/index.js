@@ -1,33 +1,24 @@
 import React from "react";
-import { Formik, Form, Field } from "formik";
-import { Redirect, Link } from "react-router-dom";
-import * as Yup from "yup";
-import "./style.css";
 import TopHeader from "../TopHeader";
 import MainHeader from "../MainHeader";
 import SmallScreenTopHeader from "../SmallScreenTopHeader";
-import { connect } from "react-redux";
-import { loginThunkAction } from "../../redux/actions/loginActions";
 
-const loginSchema = Yup.object().shape({
+const registerSchema = Yup.object().shape({
+  name: Yup.string().email().required("Required!"),
   email: Yup.string().email().required("Required!"),
   password: Yup.string().required("Required!"),
 });
 
-function Login(props) {
-  const { loginLoading, isAuth } = props;
-  if (isAuth) {
-    return <Redirect to="/new-list" />;
-  }
+function Register(props) {
   return (
-    <div className="login">
+    <div className="register">
       <TopHeader />
       <SmallScreenTopHeader />
       <MainHeader />
       <div className="container">
         <div className="row">
           <div className="col-lg-6">
-            <h3 className="login-lead">Log in to save and access your lists</h3>
+            <h3 className="register-lead">Sign up to save lists</h3>
             <h6 className="my-3">
               New to Flask.io?{" "}
               <Link to="/register">Sign up here to save your lists.</Link>
@@ -35,14 +26,15 @@ function Login(props) {
 
             <Formik
               initialValues={{
+                name: "",
                 email: "",
                 password: "",
               }}
-              validationSchema={loginSchema}
+              validationSchema={registerSchema}
               onSubmit={(values) => {
-                props.loginThunkAction({
+                props.ragisterThunkAction({
                   email: "eve.holt@reqres.in",
-                  password: "cityslicka",
+                  password: "pistol",
                 });
               }}
             >
@@ -67,10 +59,10 @@ function Login(props) {
 
                   <button
                     disabled={loginLoading}
-                    className="my-3 btn btn-lg login-btn"
+                    className="my-3 btn btn-lg register-btn"
                     type="submit"
                   >
-                    Login
+                    Register
                   </button>
                 </Form>
               )}
@@ -83,12 +75,4 @@ function Login(props) {
   );
 }
 
-const mapStateToProps = (state) => {
-  return {
-    loginLoading: state.loginReducer.loginLoading,
-    isAuth: state.loginReducer.isAuth,
-    loginError: state.loginReducer.loginError,
-  };
-};
-
-export default connect(mapStateToProps, { loginThunkAction })(Login);
+export default Register;
