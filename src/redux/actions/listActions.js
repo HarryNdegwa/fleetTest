@@ -6,7 +6,7 @@ export const saveList = (data) => {
   };
 };
 
-const checkCurrent = (data) => {
+export const checkCurrent = (data) => {
   switch (data.current) {
     case "unStarred":
       return 1;

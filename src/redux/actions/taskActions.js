@@ -1,9 +1,10 @@
 import * as t from "./actionsType";
 
 import { updateListTasks } from "../actions/listActions";
+import { checkCurrent } from "./listActions";
 
 const joinTaskArrays = (tasks) => {
-  return [...tasks[0], ...tasks[1], ...tasks[2]];
+  return [...tasks[0], ...tasks[1], ...tasks[2], ...tasks[0]];
 };
 
 export const setUpTasksArray = (data, id) => {
@@ -25,16 +26,24 @@ export const setUpTasksArray = (data, id) => {
   }
 };
 
-export const deleteTask = (tasks, data) => {
-  return (dispatch) => {
-    const s = tasks.filter((task, _idx) => {
-      return task !== data;
+export const deleteTask = (data) => {
+  return (dispatch, getState) => {
+    const currentList = getState().listReducer.persistedList;
+    const containerId = checkCurrent(data);
+    const taskContainer = currentList.tasks[containerId];
+    const newTaskContainer = taskContainer.filter((task) => {
+      return task.id !== data.id;
     });
-    dispatch({
-      type: t.DELETE_TASK,
-      data: s,
-    });
-    dispatch(updateListTasks(s, data));
+    currentList.tasks[containerId] = newTaskContainer;
+    currentList.tasks[3].push(data);
+    // const s = tasks.filter((task, _idx) => {
+    //   return task !== data;
+    // });
+    // dispatch({
+    //   type: t.DELETE_TASK,
+    //   data: s,
+    // });
+    // dispatch(updateListPersistedList(s, data));
   };
 };
 

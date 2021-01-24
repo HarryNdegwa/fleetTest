@@ -22,7 +22,7 @@ function Task(props) {
     const proceed = confirm("Delete this task?");
     if (proceed) {
       // delete function
-      props.deleteTask(props.tasks, data);
+      props.deleteTask(data);
       setShowActions(!showActions);
     } else {
       return;
@@ -30,7 +30,7 @@ function Task(props) {
   };
 
   const { data } = props;
-  console.log(data);
+  // console.log(data);
   return (
     <div className="task">
       <div className="task-info">

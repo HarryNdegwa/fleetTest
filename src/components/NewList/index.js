@@ -30,6 +30,7 @@ function NewList(props) {
         dueDate: null,
         current: "unStarred",
         id: uuidv1(),
+        deleted: false,
       };
       const list = {
         listName: `My to-do list ${processDate()}`,
