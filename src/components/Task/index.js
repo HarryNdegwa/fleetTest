@@ -105,7 +105,7 @@ function Task(props) {
                   className="task-action-icon color-icon"
                   title="Tag task with color"
                 />
-                <Colors />
+                <Colors data={data} />
               </span>
             </React.Fragment>
           )}
@@ -151,7 +151,7 @@ function Task(props) {
                     style={{ fontSize: "17px" }}
                     className="task-action-icon"
                   />
-                  <Colors />
+                  <Colors data={data} />
                 </span>
               </React.Fragment>
             )}

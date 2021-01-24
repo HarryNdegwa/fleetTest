@@ -1,13 +1,68 @@
 .colors {
   visibility: hidden;
-  width: 120px;
-  background-color: blue;
+  width: 150px;
+  background-color: #fff;
   text-align: center;
-  padding: 5px 0;
   border-radius: 6px;
   position: absolute;
   z-index: 1000;
   height: 40px;
   top: -5px;
   right: 105%;
+  border: 1px solid #eaecee;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.colors::after {
+  content: " ";
+  position: absolute;
+  top: 50%;
+  left: 100%; /* To the right of the tooltip */
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+}
+
+.colors span {
+  cursor: pointer;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.color-active {
+  width: 20px;
+  height: 20px;
+}
+
+.white {
+  background-color: #fff;
+  border: 1px solid green;
+}
+
+.light-blue {
+  background-color: #add8e6;
+}
+
+.purple {
+  background-color: purple;
+}
+
+.dark-orange {
+  background-color: #ff8c00;
+}
+
+.green {
+  background-color: green;
+}
+
+.dark-pink {
+  background-color: #e75480;
 }
