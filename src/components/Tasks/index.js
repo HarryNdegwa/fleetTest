@@ -61,9 +61,9 @@ function Tasks(props) {
           return <Task key={idx} data={task} id={idx} />;
         })}
 
-      {checkAllTasksChecked(tasks, persistedList) ? (
+      {/* {checkAllTasksChecked(tasks, persistedList) ? (
         <h3>You are all done!</h3>
-      ) : null}
+      ) : null} */}
 
       <div>
         {persistedList && persistedList.tasks[2] ? (
