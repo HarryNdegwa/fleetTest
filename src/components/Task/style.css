@@ -90,7 +90,7 @@
 }
 
 .checked-text {
-  text-overflow: line-through;
+  text-decoration: line-through;
   color: #d4d4d4;
 }
 

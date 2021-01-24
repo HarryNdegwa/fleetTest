@@ -6,6 +6,11 @@
   background-color: #413b4f;
   width: 100%;
   color: #fff;
+  overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 4px;
 }
 
 .sidebar li {

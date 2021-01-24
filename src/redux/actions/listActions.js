@@ -67,7 +67,7 @@ export const deleteListWrapper = (id) => {
 export const cloneList = () => {
   return (dispatch, getState) => {
     const toCloneList = getState().listReducer.persistedList;
-    const newList = { ...toCloneList };
+    const newList = JSON.parse(JSON.stringify(toCloneList));
     newList.listName = "Duplicate " + toCloneList.listName;
     newList.id = uuidv1();
     dispatch({ type: t.ADD_CLONED_LIST, data: newList });
