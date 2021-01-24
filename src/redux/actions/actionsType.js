@@ -9,4 +9,5 @@ export const CHECK_TASK = "CHECK_TASK";
 export const UPDATE_PERSISTED_LIST = "UPDATE_PERSISTED_LIST";
 export const UPDATE_LISTS = "UPDATE_LISTS";
 export const PERSIST_LIST = "PERSIST_LIST";
+export const DELETE_LIST = "DELETE_LIST";
 export const LOGOUT = "LOGOUT";

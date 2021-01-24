@@ -30,6 +30,8 @@ function SavedLists(props) {
     return count;
   };
 
+  const handleDeleteList = (e, id) => {};
+
   const { lists } = props;
   console.log(lists);
   return (
@@ -84,6 +86,7 @@ function SavedLists(props) {
                 <ImCross
                   style={{ fontSize: "10px" }}
                   className="task-action-icon"
+                  onClick={(e) => handleDeleteList(e, list.id)}
                 />
               </span>
             ))}
