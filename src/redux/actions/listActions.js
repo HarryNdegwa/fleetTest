@@ -1,4 +1,5 @@
 import * as t from "./actionsType";
+import { v1 as uuidv1 } from "uuid";
 
 export const saveList = (data) => {
   return (dispatch) => {
@@ -60,5 +61,20 @@ export const deleteListWrapper = (id) => {
       type: t.DELETE_LIST,
       data: lists,
     });
+  };
+};
+
+export const cloneList = () => {
+  return (dispatch, getState) => {
+    const toCloneList = getState().listReducer.persistedList;
+    const newList = { ...toCloneList };
+    newList.listName = "Duplicate " + toCloneList.listName;
+    newList.id = uuidv1();
+    console.log(newList);
+    // dispatch({type:t.ADD_CLONED_LIST,data:newList})
+    // dispatch({
+    //   type: t.PERSIST_LIST,
+    //   data: newList,
+    // });
   };
 };

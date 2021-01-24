@@ -43,6 +43,8 @@ export const listReducer = (state = initialState, action) => {
       return { ...state, persistedList: action.data };
     case t.DELETE_LIST:
       return { ...state, lists: action.data };
+    case t.ADD_CLONED_LIST:
+      return { ...state, lists: action.data };
     default:
       return state;
   }

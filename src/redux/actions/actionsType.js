@@ -9,4 +9,5 @@ export const UPDATE_PERSISTED_LIST = "UPDATE_PERSISTED_LIST";
 export const UPDATE_LISTS = "UPDATE_LISTS";
 export const PERSIST_LIST = "PERSIST_LIST";
 export const DELETE_LIST = "DELETE_LIST";
+export const ADD_CLONED_LIST = "ADD_CLONED_LIST";
 export const LOGOUT = "LOGOUT";

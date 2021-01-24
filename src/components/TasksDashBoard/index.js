@@ -18,6 +18,10 @@ function TaskDashBoard(props) {
     setUpTasksArray(lists);
   }, [persistedList, lists, setUpTasksArray]);
 
+  const handleCloneClick = () => {
+    // do something
+  };
+
   if (!lists || lists.length === 0) {
     return <Redirect to="/new-list" />;
   }
@@ -60,7 +64,7 @@ function TaskDashBoard(props) {
                 <h5>My to-do list 01/20/2021</h5>
               </div>
               <div className="col-6 text-right">
-                <button className="btn btn-md">
+                <button className="btn btn-md" onClick={handleCloneClick}>
                   <ImCopy style={{ fontSize: "20px", color: "#fff" }} />{" "}
                   <span className="ml-2 y text-light">Clone This List</span>
                 </button>
